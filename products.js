@@ -10,6 +10,9 @@ let loaderImg = document.createElement("img");
 
 loaderImg.setAttribute("class","loaderImg");
 
+let filterBrand = document.querySelectorAll("input[type=checkbox]")
+
+
 
 
 let url = `http://localhost:3000/all`
@@ -28,12 +31,12 @@ let url = `http://localhost:3000/all`
 // }
 
 
-async function fetchData(){
+async function fetchData(url){
 
    try {
 
     if(isLoader){
-        console.log(loaderImg);
+      //   console.log(loaderImg);
         loaderImg.src = "./loaderProduct.jpg"
         container.innerHTML = null;
          container.append(loaderImg)
@@ -67,7 +70,27 @@ async function fetchData(){
       
 }
 
-fetchData()
+fetchData(url)
+// console.log(filterBrand);
+
+let arr = [];
+for(let i=0;i<filterBrand.length;i++){
+
+   filterBrand[i].addEventListener("change",(e)=>{
+
+        // let fData = allData.filter((el=>el.name))
+       if(filterBrand[i].checked){
+         arr.push(`title=${e.target.name}`)
+         console.log(e.target.name);
+       }
+        
+   })
+
+}
+let url2 = `http://localhost:3000/all?${arr.join("&")}`
+console.log(arr.join("&"))
+
+fetchData(url2)
 
 
 function renderData(product){
