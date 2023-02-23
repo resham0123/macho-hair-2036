@@ -9,88 +9,127 @@ let isLoader = true;
 let loaderImg = document.createElement("img");
 
 loaderImg.setAttribute("class","loaderImg");
-
-let filterBrand = document.querySelectorAll("input[type=checkbox]")
-
-
-
-
-let url = `http://localhost:3000/all`
-
-
-
-
-
-// if(isLoader){
-
-//    container.innerHTML = null;
-   
- 
-
-//     container.innerHTML = loaderImg
-// }
-
-
-async function fetchData(url){
-
-   try {
-
-    if(isLoader){
-      //   console.log(loaderImg);
-        loaderImg.src = "./loaderProduct.jpg"
-        container.innerHTML = null;
-         container.append(loaderImg)
-     }
-
-    let res = await fetch(url);
-
-    totalItems = res.headers.get("X-Total-Count");
-
-    // console.log(totalItems);
-    
-    let data = await res.json();
-    
-    totalProductDiv.innerText = `There are total ${data.length} items to explore`
-    isLoader = false;
-    allData = data;
-    // console.log("🚀 ~ file: products.js:28 ~ fetchData ~ data:", data)
-
-    if(!isLoader){
-        renderData(data)
-    }
-
-   
-    
-
-    
-    
-   } catch (error) {
-    console.log(error);
-   }
-      
-}
+let url = `https://macho-hair-backend.vercel.app/all`
 
 fetchData(url)
-// console.log(filterBrand);
 
-let arr = [];
-for(let i=0;i<filterBrand.length;i++){
+let filterBrand = document.querySelectorAll(" #brand input")
+let filterBrandArray = [];
+let filterCategory = document.querySelectorAll("#category input")
+let filterCategoryArray = [];
 
-   filterBrand[i].addEventListener("change",(e)=>{
+for(let brand of filterBrand){
 
-        // let fData = allData.filter((el=>el.name))
-       if(filterBrand[i].checked){
-         arr.push(`title=${e.target.name}`)
-         console.log(e.target.name);
-       }
-        
+    brand.addEventListener("change",(e)=>{
+       filterBrandFun(e);
+    })
+}
+
+for(let cat of filterCategory){
+   cat.addEventListener("change",(e)=>{
+      filterCategoryFun(e);
+      // console.log(cat);
    })
+}
+
+function filterBrandFun(e){
+
+    if(e.target.checked){
+      filterBrandArray.push(e.target.id)
+    }
+
+    else{
+       filterBrandArray = filterBrandArray.filter(el=>el!=e.target.id)
+    }
+
+    showFilter(filterBrandArray,filterCategoryArray)
 
 }
-let url2 = `http://localhost:3000/all?${arr.join("&")}`
-console.log(arr.join("&"))
 
-fetchData(url2)
+function filterCategoryFun(e){
+
+    if(e.target.checked){
+      filterCategoryArray.push(e.target.id)
+    }
+
+    else{
+       filterCategoryArray = filterCategoryArray.filter(el=>el!=e.target.id)
+    }
+
+    showFilter(filterBrandArray,filterCategoryArray)
+};
+
+function showFilter(bArr=[],cArr=[]){
+
+     if(bArr.length==0&&cArr.length==0){
+       renderData(allData)
+     }
+
+     else{
+      let a1 = [];
+      let a2 = [];
+      if(bArr.length){
+
+         for(let i=0;i<bArr.length;i++){
+
+            let filter = allData.filter(item=>{
+               return item.title.toLowerCase==bArr[i].toLowerCase;
+            })
+
+            for(let i=0;i<filter.length;i++){
+                a1.push(filter[i])
+            }
+         }
+      }
+      if(cArr.length){
+
+         for(let i=0;i<cArr.length;i++){
+
+            let filter = allData.filter(item=>{
+               return item.category.toLowerCase==cArr[i].toLowerCase;
+            })
+
+            for(let i=0;i<filter.length;i++){
+                a2.push(filter[i])
+            }
+         }
+      }
+
+      // else{
+      //    a2 = a1;
+      // }
+    
+      let x = [...a1,...a2]
+     renderData(x)
+     }  //else ends here
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function renderData(product){
@@ -156,4 +195,59 @@ function getCard({img,category,title,quantity,price,delivery}){
       return card
        
    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function fetchData(url){
+
+   try {
+
+    if(isLoader){
+      //   console.log(loaderImg);
+        loaderImg.src = "./loaderProduct.jpg"
+        container.innerHTML = null;
+         container.append(loaderImg)
+     }
+
+    let res = await fetch(url);
+
+    totalItems = res.headers.get("X-Total-Count");
+
+    // console.log(totalItems);
+    
+    let data = await res.json();
+    
+    totalProductDiv.innerText = `There are total ${data.length} items to explore`
+    isLoader = false;
+    allData = data;
+    // console.log("🚀 ~ file: products.js:28 ~ fetchData ~ data:", data)
+
+    if(!isLoader){
+        renderData(data)
+    }
+
+   
+    
+
+    
+    
+   } catch (error) {
+    console.log(error);
+   }
+      
 }
