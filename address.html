@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <script src="https://kit.fontawesome.com/c4e502dbf0.js" crossorigin="anonymous"></script>
+    <style>
+       
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#toop{
+    width: 75%;
+    margin: auto;
+    /* border: 1px solid red; */
+    margin-right: 50px;
+    margin-top: 20px;
+    /* background-color: red; */
+    }
+    #box{
+ 
+    width: 70%;
+   float: left;
+   margin-right: 50px;
+   /* background-color: red; */
+}
+.flt{
+    width: 90%;
+    float: left;
+    margin-right: 50px;
+    text-align: center;
+    padding-top: 20px;
+}
+#Address{
+    display: block;
+    border: 2px solid #E0E0E0 ;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    
+   
+    
+   }
+  
+/* #box > div {
+    display: flex;
+} */
+#mrp{
+    margin-left: 62%;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+#mini{
+    margin-top: 100px;
+    width: 30%;
+  /* border: 1px solid yellow; */
+    float:right;
+   margin-right: 5%;
+   color: #90A4AE;
+ 
+}
+h3{
+    color: black;
+}
+
+#smallBox > div {
+    width: 100%;
+    padding: 10px;
+    /* border: 1px solid red; */
+    display: flex;
+   
+}
+.mrp{
+
+    margin-left: 50%;
+}
+.ship{
+    margin-right: 50%;
+}
+.dis{
+    margin-left: 50%;
+}
+#help{
+    border: 1px solid #CFD8DC;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+  color: #90A4AE;
+}
+   #T_bar{
+       /* max-width: 600px;
+       max-height: 50px; */
+       padding-left: 40px;
+       color:#212121;
+       font-family: system-ui;
+
+   }
+   h2{
+       /*background-color:#E0E0E0; */
+       margin-top: 0px;
+   }
+   #Add_form > div{
+     margin-top: 50px;
+     border: 1px solid white;
+     border-bottom: 1px solid gray;
+     width: 70%;
+   }
+   #Add_form > div > input{
+       border: 0px solid white;
+       margin-bottom: 10px;
+       outline: none;
+   }
+   #cit_stat{
+       display:flex;
+
+   }
+   #stat{
+       margin-left: 30px;
+   }
+   #T_add{
+       display: flex;
+       margin-top: 30px;
+       padding-left: 40px;
+       
+   }
+   select{
+       margin-left: 20px;
+   }
+   #continue {
+       height: 40px;
+       max-width: 200px;
+       color: white;
+       background-color:#e02378;
+       border-radius: 2px;
+       text-align: center;
+       margin: auto;
+       border: 0px solid #e02378;
+       cursor: pointer;
+   }
+   #continue > p{
+       margin: auto;
+       padding-top: 6px;
+   }
+   #manage{
+       display: flex;
+       margin-left: 0px;
+   }
+   #Jeet{
+       margin-left: 20px;
+       border: 0px solid white;
+   }
+   #Jeet > input{
+       border: 1px solid white;
+       outline: none;
+    
+   }
+   #cit_stat > div > input{
+       border: 0px solid white;
+       margin-bottom: 10px;
+       outline: none;
+   }
+  #Jeet  > input{
+      margin-bottom: 10px;
+      outline: none;
+  }
+  select{
+      border: none;
+  }
+  .clear{
+      clear: both;
+  }
+
+
+#warn{
+    color: red;
+    font-size: 20px;
+    margin-left: 31%;
+    padding: 10px;
+}
+#Add_new_address{
+    padding-top: 10px;
+    padding-left: 120px;
+    color: #e02378;
+}
+    </style>
+</head>
+
+<body>
+<!-- 
+    <div id="top-box">
+        <div><a href="AfterLogin.html"><img id="logo"
+                    src="https://media6.ppl-media.com/static/purplle/img/purplle-logo-1.svg" /></a></div>
+        <div class="basket-icons">
+
+            <a href="card.html"><i class="fas fa-cart-plus fa-3x" id="check"></i></i></a>
+
+            <a href="checkout.html"><i class="fas fa-money-bill-wave-alt fa-3x" id="face"></i></a>
+
+
+
+        </div>
+
+    </div> -->
+    <div id="toop">
+        <div id="box">
+            <div id="Address">
+                <div id="T_bar">
+                    <h2 id="Add_new_address">Add New Address</h2>
+
+
+                    <form action="checkout.html" method="post" id="Add_form">
+                        <div id="manage">
+                            <select>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Miss">Miss</option>
+                            </select>
+                            <div id="Jeet">
+                                <label>Name:</label>
+                                <input id="nam" type="text" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label>Pincode*</label>
+                            <input id="pin" type="number" required />
+                        </div>
+                        <div>
+                            <label>Address*</label>
+                            <input id="division" type="text" required />
+                        </div>
+                        <div>
+                            <label>Landmark:</label>
+                            <input type="text" required />
+                        </div>
+                        <div id="cit_stat">
+                            <div>
+                                <label>city:</label>
+                                <input id="cit" type="text" required />
+                            </div>
+                            <div>
+                                <label id="stat">State:</label>
+                                <input id="sta" type="text" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label>Mobile*</label>
+                            <input id="phone" type="number" required />
+                        </div>
+                    </form>
+                </div>
+                <div id="T_add">
+                    <h3>Address type</h3>
+                    <select>
+                        <option value="Home">Home</option>
+                        <option value="Office">Office</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+
+            </div>
+
+            </form>
+        </div>
+
+
+        <!-- <div id="mini">
+            <div id="help">Need help? 922330022</div>
+            <h3>Price Details</h3>
+            <div id="smallBox">
+                <div>
+                    <div>Total MRP:</div>
+                    <div id="mrp"></div>
+                </div>
+                <div>
+                    <div class="ship">Shipping charges:</div>
+                    <div>Free</div>
+                </div>
+                <div>
+                    <div>Coupon Discount:</div>
+                    <div class="dis">0</div>
+                </div>
+                <div>
+
+
+                    <div></div>
+                </div>
+
+            </div> -->
+
+        </div> 
+        <div class="flt">
+            <p>Address type prefrences are used to plan your delivery.However,shipments can sometimes</p>
+            <p>arrive early or later then planned</p>
+            <div id="warn"></div>
+            <div id="continue">
+                <button onclick="addAddress()" id="continue">SAVE AND CONTINUE</button>
+
+
+            </div>
+            <br>
+            <br>
+
+        </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+
+
+    var address = [];
+    var localstorageitem = JSON.parse(localStorage.getItem("address"));
+    // if (localstorageitem !== null) {
+    //     address = JSON.parse(localstorageitem);
+    // }
+    function addAddress() {
+        check();
+        var nam = document.getElementById("nam").value;
+        var code = document.getElementById("pin").value;
+        var stre = document.getElementById("division").value;
+        var cit = document.getElementById("cit").value;
+        var st = document.getElementById("sta").value;
+        var mobi = document.getElementById("phone").value;
+
+
+
+        var objpro = {
+            name: nam,
+            street: stre,
+            city: cit,
+            state: st,
+            pincode: code,
+            mobile: mobi,
+
+        }
+        address.push(objpro);
+        localStorage.setItem("address", JSON.stringify(address));
+
+    };
+
+
+    let card_data = JSON.parse(localStorage.getItem("cart-list"));
+
+    var total = 0;
+    var totalitem = 0;
+    if (card_data == null) {
+        card_data = [];
+    } else {
+        for (let i = 0; i < card_data.length; i++) {
+            // console.log(card_data[i].price);
+            let out = card_data[i].price;
+            total += total + Number(out);
+            totalitem += totalitem + Number(1);
+        }
+    }
+
+    var total_h1 = document.getElementById("mrp");
+
+    if (total_h1) {
+
+        total_h1.innerHTML = "₹" + total;
+
+    }
+    // var totalitems = document.getElementById("totalitem");
+
+    // totalitems.innerText = `Total Items  - ${(totalitem)}`
+
+    function check() {
+        var nam = document.getElementById("nam").value;
+        var code = document.getElementById("pin").value;
+        var stre = document.getElementById("division").value;
+        var cit = document.getElementById("cit").value;
+        var st = document.getElementById("sta").value;
+        var mobi = document.getElementById("phone").value;
+
+
+        if ((code.length == 6) && (stre.length > 0) && (nam.length > 0) && (cit.length > 0) && (st.length > 0) && (cit.length > 0) && (mobi.length == 10)) {
+            console.log("yes");
+            window.location.href = "checkout.html";
+
+        } else {
+            let warni = document.getElementById("warn");
+            warni.innerHTML = "Please fill required fields*"
+        }
+    }
+
+
+</script>
