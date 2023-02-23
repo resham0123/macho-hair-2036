@@ -10,4 +10,9 @@ function first(){
  setInterval(first,2000);
  setInterval(second,4000);
  setInterval(third,6000);
+ 
+ document.querySelector("#rsign").addEventListener("click",()=>{
+   console.log("hii");
+  document.querySelector("#rsignupage").classList.add("active");
+ })
 
