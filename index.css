@@ -1,5 +1,13 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family:Poppins
+}
+
+
+
 #nav{
     border:2px solid red;
     width: 100%;
@@ -64,7 +72,7 @@ margin-top: 20px;
     font-size: 16px;
     
 }
-#offer>button:nth-child(1){
+.btn{
     width: 300px;
     margin-left: 100px;
     background-color: red;
@@ -134,6 +142,222 @@ margin-top: 20px;
 #bank div img{
 width: 100%;
 }
+
+#Paragraph{
+    width: 85%;
+    margin-top: 25px;
+    border: 1px solid gray;
+    color: gray;
+    margin-left: 6%;
+    padding: 15px;
+}
+#Paragraph h1{
+    color: black;
+}
+#dietimg{
+    border:2px solid red;
+    width: 90%;
+    margin-left:5% ;
+    margin-top: 3%;
+}
+#brand_store{
+    width: 90%;
+    margin: auto;
+    border:2px solid red;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);  
+    column-gap: 1%;   
+    margin-top: 15px;
+    
+    
+}
+#brand_store div img{
+width: 100%;
+}
+#brand_store div{
+    border: 1px solid gray;
+}
+#Bbrand{
+    width: 100%;
+    height: 20%;
+    border: 2px solid red;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    color: grey;
+}
+#vegi{
+    width: 90%;
+    margin: auto;
+    border:2px solid red;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);  
+    column-gap: 1%;   
+    margin-top: 15px;   
+}
+#vegi div img{
+width: 100%;
+}
+#vegi div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#Fvegi{
+    width: 100%;
+    height: 20%;
+    border: 2px solid red;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    color: grey;  
+}
+#Daily_Staples{
+    width: 90%;
+    margin: auto;
+    border:2px solid red;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);  
+    column-gap: 1%;   
+    margin-top: 15px;   
+}
+#Daily_Staples div img{
+width: 100%;
+}
+#Daily_Staples div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#Dstaples{
+    width: 100%;
+    height: 20%;
+    border: 2px solid red;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    color: grey;   
+}
+
+#Beverages{
+    width: 90%;
+    margin: auto;
+    border:2px solid red;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);  
+    column-gap: 1%;   
+    margin-top: 15px;   
+}
+#Beverages div img{
+width: 100%;
+}
+#Beverages div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#beve{
+    width: 100%;
+    height: 20%;
+    border: 2px solid red;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    color: grey;   
+}
+
+#Snacks_Store{
+    width: 90%;
+    margin: auto;
+    border:2px solid red;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);  
+    column-gap: 1%;   
+    margin-top: 15px;   
+}
+#Snacks_Store div img{
+width: 100%;
+}
+#Snacks_Store div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#Snacks{
+    width: 100%;
+    height: 20%;
+    border: 2px solid red;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    color: grey;   
+}
+#Hygiene{
+    width: 90%;
+    margin: auto;
+    border:2px solid red;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);  
+    column-gap: 1%;   
+    margin-top: 15px;   
+}
+#Hygiene div img{
+width: 100%;
+}
+#Hygiene div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#Hy{
+    width: 100%;
+    height: 20%;
+    border: 2px solid red;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    color: grey;   
+}
+
+/* footer */
+
+#footer{
+    display:grid;
+    justify-content:space-around;
+    width:86%;
+    margin:auto;
+    grid-template-columns: repeat(4,1fr);
+    border:1px solid red;
+    padding:5px
+
+}
+#footer>div>p:nth-child(1){
+    color:green;
+}
+.foot{
+    display:flex;
+    flex-direction:column;
+    border-radius:1px solid green;
+    margin:auto;
+    /* gap:-10px; */
+}
+.foot img{
+   width:60%;
+
+   
+   
+}
+
+.round-social{
+    display:flex;
+    gap:5px;
+    box-sizing:border-box;
+}
+.round-social img{
+    width:80%;
+}
+
+
+
+.round-social>div{
+   border-radius:50%;
+   width:40px;
+   height:40px;
+   /* border:1px solid red; */
+}
+
+/* footer */
+=======
 
 /* #rsignupage{
     position: absolute;
@@ -232,4 +456,5 @@ width: 100%;
 #store>img:nth-child(2){
     width: 10%;
 }
- */ */
+
+
