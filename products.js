@@ -1,19 +1,29 @@
 
+import nav from "./nav.js"
+
+
+let navDiv = document.getElementById("pr-nav");
+navDiv.innerHTML = nav;
+
+
+
 let container = document.getElementById("product-container")
 let sortFilter = document.getElementById("sort-price");
+let limit = 20;
+let pagesDiv = document.getElementById("pagination-wrapper")
 let allData = [];
 
 let totalItems
 let totalProductDiv = document.getElementById("count-product");
-let isLoader = true;
-let loaderImg = document.createElement("img");
 
+let loaderImg = document.createElement("img");
 loaderImg.setAttribute("class","loaderImg");
+
 let url = `https://macho-hair-backend.vercel.app/all`
 
 fetchData(url)
 
-let filterBrand = document.querySelectorAll(" #brand input")
+let filterBrand = document.querySelectorAll("#brand input")
 let filterBrandArray = [];
 let filterCategory = document.querySelectorAll("#category input")
 let filterCategoryArray = [];
@@ -73,7 +83,7 @@ function showFilter(bArr=[],cArr=[]){
          for(let i=0;i<bArr.length;i++){
 
             let filter = allData.filter(item=>{
-               return item.title.toLowerCase==bArr[i].toLowerCase;
+               return item.title==bArr[i];
             })
 
             for(let i=0;i<filter.length;i++){
@@ -86,7 +96,7 @@ function showFilter(bArr=[],cArr=[]){
          for(let i=0;i<cArr.length;i++){
 
             let filter = allData.filter(item=>{
-               return item.category.toLowerCase==cArr[i].toLowerCase;
+               return item.category==cArr[i];
             })
 
             for(let i=0;i<filter.length;i++){
@@ -99,8 +109,21 @@ function showFilter(bArr=[],cArr=[]){
       //    a2 = a1;
       // }
     
-      let x = [...a1,...a2]
-     renderData(x)
+      let data = [...a1,...a2];
+
+      const uniqueData = data.filter((obj, i, arr) =>
+          i=== arr.findIndex((o) => o.id === obj.id)
+      );
+
+
+
+
+      // console.log({a1},{a2});
+      // console.log({x})
+      // let y = [`title=${a1.join("&")}&category=${a2.join("&")}`]
+   //  console.log(y);
+      // let url = "https://macho-hair-backend.vercel.app/all&"
+         renderData(uniqueData)
      }  //else ends here
 }
 
@@ -123,6 +146,116 @@ function showFilter(bArr=[],cArr=[]){
 
 
 
+sortFilter.addEventListener("click",sortData);
+
+function sortData(){
+
+     isLoader = true
+
+   //   if(isLoader){
+   //    //   console.log(loaderImg);
+   //      loaderImg.src = "loader.gif"
+   //      container.innerHTML = null;
+   //       container.append(loaderImg)
+   //   }
+
+     if(sortFilter.value==""){
+      //   isLoader = false
+        renderData(allData)
+     }
+
+     if(sortFilter.value=="asc"){
+         console.log("allData  ",allData);
+        let ascen = allData.sort((a,b)=>a.price-b.price);
+      //   console.log("asecn ",ascen);
+      //   isLoader = false;
+        renderData(ascen)
+     }
+
+     if(sortFilter.value=="desc"){
+
+        let descen = allData.sort((a,b)=>b.price-a.price);
+        renderData(descen)
+     }
+
+   }
+async function fetchData(page=1){
+ let isLoader = true;
+  
+   try {
+
+    if(isLoader){
+      //   console.log(loaderImg);
+      loaderImg.src = "loader.gif"
+      container.style.display = "block";
+        container.innerHTML = null;
+         container.append(loaderImg)
+     }
+
+    let res = await fetch(`https://macho-hair-backend.vercel.app/all?_limit=${limit}&_page=${page}`);
+
+
+   //  console.log({page},{limit});
+    totalItems = res.headers.get("x-total-count");
+   totalProductDiv.innerText = `There are total ${totalItems} items to explore`
+
+    console.log(totalItems);
+
+   //  console.log(res.headers.get("X-Total-Count"));
+    console.log(res);
+    
+    let data = await res.json();
+    
+    
+    allData = data;
+    let totalPages = Math.ceil(totalItems/limit);
+
+    
+   setTimeout(() => {
+      container.innerHTML = null;
+      container.style.display = "grid"
+      isLoader = false;
+      if(!isLoader){
+         renderData(data)
+         renderPages(totalPages)
+     }
+   },800);
+
+  } catch (error) {
+   console.log(error);
+  }
+
+}
+
+
+function renderPages(pages){
+
+   let arr = [];
+
+   for(let i=1;i<=pages;i++){
+      arr.push(`<button data-page-number=${i}>${i}</button>`)
+   }
+
+   // console.log(arr);
+   pagesDiv.innerHTML = arr.join("");
+   // console.log(pagesDiv);
+
+   let all_btn = document.querySelectorAll("#pagination-wrapper button");
+
+   for(let btn of all_btn){
+       btn.addEventListener("click",(e)=>{
+
+         console.log(e.target.dataset.pageNumber);
+           fetchData(e.target.dataset.pageNumber)
+           window.scrollTo({ top: 0,behaviour:"smooth" });
+       })
+   }
+}
+
+
+
+
+
 
 
 
@@ -133,8 +266,10 @@ function showFilter(bArr=[],cArr=[]){
 
 
 function renderData(product){
-
+   
+   console.log(product,"this line");
     container.innerHTML = null;
+
 
    let cardData =  product.map(item=>{
       return getCard(item)
@@ -156,26 +291,6 @@ function renderData(product){
 
 }
 
-
-sortFilter.addEventListener("click",sortData);
-
-function sortData(){
-
-     if(sortFilter.value=="asc"){
-         console.log("allData  ",allData);
-        let ascen = allData.sort((a,b)=>a.price-b.price);
-        console.log("asecn ",ascen);
-        renderData(ascen)
-     }
-
-     if(sortFilter.value=="desc"){
-
-        let descen = allData.sort((a,b)=>b.price-a.price);
-        renderData(descen)
-     }
-}
-
-
 function getCard({img,category,title,quantity,price,delivery}){
 // console.log("🚀 ~ file: products.js:52 ~ getCard ~ img,category,title,quantity,price,delivery:", img,category,title,quantity,price,delivery)
   
@@ -188,6 +303,7 @@ function getCard({img,category,title,quantity,price,delivery}){
     <p>Quantity: ${quantity}</p>
     <p>Price: ${price}</p>
     <p>${delivery}</p>
+    <span>Quantity: <input id="quan-inp"></input></span>
     <button class="product-add-btn" data-title=${title}>Add To Cart</button>
       </div>`
 
@@ -195,59 +311,4 @@ function getCard({img,category,title,quantity,price,delivery}){
       return card
        
    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-async function fetchData(url){
-
-   try {
-
-    if(isLoader){
-      //   console.log(loaderImg);
-        loaderImg.src = "./loaderProduct.jpg"
-        container.innerHTML = null;
-         container.append(loaderImg)
-     }
-
-    let res = await fetch(url);
-
-    totalItems = res.headers.get("X-Total-Count");
-
-    // console.log(totalItems);
-    
-    let data = await res.json();
-    
-    totalProductDiv.innerText = `There are total ${data.length} items to explore`
-    isLoader = false;
-    allData = data;
-    // console.log("🚀 ~ file: products.js:28 ~ fetchData ~ data:", data)
-
-    if(!isLoader){
-        renderData(data)
-    }
-
-   
-    
-
-    
-    
-   } catch (error) {
-    console.log(error);
-   }
-      
 }
