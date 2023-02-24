@@ -16,9 +16,10 @@
             display: grid;
             grid-template-columns: 60%;
            grid-gap: 1%;
+           /* border: 2px solid red; */
            
         }
-  #data div {
+         #data div {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -45,23 +46,24 @@
         }
        
        
-#top{
-    box-shadow: 0 0 40px 20px rgba(240, 7, 170, 0.15);
+        #top{
+         box-shadow: 0 0 40px 20px rgba(240, 7, 170, 0.15);
 	
-    float: right;
+   float: right;
             
-      border-radius: 5px;
+  border-radius: 5px;
         font-size: 20px;
         margin-top:30px;
         padding: 12px;
         width: 430px;
         height: 380px;
-        margin-right: 290px;
+        margin-right: 200px;
+        margin-left: 200px;
         position: sticky;
         top: 200px;
         bottom: 100px;
         background-color: white;
-        
+        /* border: 2px solid red; */
 }
 #top button{
     
@@ -123,9 +125,12 @@ h3{
 }
 #om{
     /* background-color: red; */
-    margin-left: 16%;
+    /* border: 2px solid red; */
+    /* margin-left: 10%; */
+    width: 300px;
     padding-top: 10px;
     font-weight: bold;
+    margin-left: 300px;
 }
 
     </style>
@@ -182,16 +187,53 @@ h3{
     //  console.log("cart-list", card_data);
 
     let data_div = document.getElementById("data");
-    let arr = []
+    // let arr = [
+    // {
+    //     "id":1,
+    //     "img" : "https://www.bigbasket.com/media/uploads/p/s/20000911_30-fresho-kiwi-green.jpg",
+    //     "brand":"Fruits and Vegitables",
+    //     "title": "Kiwi - Green",
+    //     "quantity":"3 pcs",
+    //     "price":148.75  
+
+    // },
+    // {
+    //     "id":2,
+    //     "img" : "https://www.bigbasket.com/media/uploads/p/s/10000148_30-fresho-onion.jpg",
+    //     "brand":"Fruits and Vegitables",
+    //     "title": "Onion",
+    //     "quantity":"1 kg",
+    //     "price":63.75
+
+    // },
+    // {
+    //     "id":3,
+    //     "img" : "https://www.bigbasket.com/media/uploads/p/s/10000071_14-fresho-carrot-orange.jpg",
+    //     "brand":"Fruits and Vegitables",
+    //     "title": "Carrot-Orange",
+    //     "quantity":"250 g",
+    //     "price":14.14
+
+    // },
+    // {
+    //     "id":4,
+    //     "img" : "https://www.bigbasket.com/media/uploads/p/s/10000142_16-fresho-ladies-finger.jpg",
+    //     "brand":"Fruits and Vegitables",
+    //     "title": "Ladies Finger",
+    //     "quantity":"1 kg",
+    //     "price":42.75 
+
+    // }
+    // ]
      var total = 0;
     var totalitem = 0 ;
-    card_data.forEach( product => {
+    data_div.forEach( product => {
        
         let div = document.createElement("div");
 
         let p_name = document.createElement("p");
 
-        p_name.innerText = product.description;
+        p_name.innerText = product.title;
         p_name.style.float="left";
         p_name.setAttribute("class","txt")
     
@@ -202,7 +244,7 @@ h3{
         console.log(p_price.innerText)
         let image = document.createElement("img");
 
-        image.src = product.image;
+        image.src = product.img;
 
         // p_name.append(p_price);
         
