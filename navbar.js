@@ -13,7 +13,7 @@ let nav =
 <div id="login">
 <div>
 
-    <a href="">Login/SignUp</a>
+    <a href="signup.html" id="rlogin" >Login/SignUp</a>
 
 </div>
 <div>
