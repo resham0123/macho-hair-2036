@@ -1,9 +1,12 @@
 
-import nav from "./nav.js"
 
+import nav from "./navbar.js";
+import footer from "./footer.js"
 
-let navDiv = document.getElementById("pr-nav");
+let navDiv = document.getElementById("nav");
+let footerDiv = document.getElementById("footer");
 navDiv.innerHTML = nav;
+footerDiv.innerHTML = footer;
 
 
 
@@ -111,13 +114,13 @@ function showFilter(bArr=[],cArr=[]){
     
       let data = [...a1,...a2];
 
-      const uniqueData = data.filter((obj, i, arr) =>
+      let uniqueData = data.filter((obj, i, arr) =>
           i=== arr.findIndex((o) => o.id === obj.id)
       );
 
 
 
-
+       
       // console.log({a1},{a2});
       // console.log({x})
       // let y = [`title=${a1.join("&")}&category=${a2.join("&")}`]
