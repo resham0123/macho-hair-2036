@@ -13,10 +13,16 @@ let nav =
 </div>
 <div id="login">
 <div>
+
    
     <a href="">Login/SignUp</a>
     
     
+
+
+    <a href="signup.html" id="rlogin" >Login/SignUp</a>
+
+
 </div>
 <div>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIqso8C1IWNREoH1G489UcD8PvgT1jRzqeAjFDlJ0xpVzEuUP1c1mj4Og0EwjS4GgmBM&usqp=CAU"
