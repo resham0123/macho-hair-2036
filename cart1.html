@@ -12,12 +12,29 @@
     <!-- <link rel="stylesheet" href="../css/Top.css"> -->
     <title>Cart</title>
     <style>
+      
+
+
+
+/* footer */
+
+
+
+
+       
   
         #data {
-            display: grid;
+            /* display: grid;
             grid-template-columns: 60%;
-           grid-gap: 1%;
+           grid-gap: 1%; */
+           width: 40%;
            /* border: 2px solid red; */
+           display: grid;
+          grid-template-columns: repeat(2,1fr);
+          gap: 10px;
+          margin-left: 85px;
+          margin-top: 30px;
+          
            
         }
          #data div {
@@ -26,10 +43,11 @@
             align-items: center;
             width: 75%;
              box-shadow: 0 0 40px 20px rgba(223, 86, 170, 0.2);
-             margin-left: 320px;
+             /* margin-left: 200px; */
              border-radius: 15px;
              height: 190px;
              padding: 10px;
+             /* border: 2px solid red; */
              
         }
         #data div img{
@@ -50,21 +68,24 @@
         #top{
          box-shadow: 0 0 40px 20px rgba(240, 7, 170, 0.15);
 	
-   float: right;
-            
-  border-radius: 5px;
+         /* float: right; */
+         display: flex;
+            justify-content: space-around;
+         border-radius: 5px;
         font-size: 20px;
         margin-top:30px;
         padding: 12px;
-        width: 430px;
-        height: 380px;
-        margin-right: 200px;
-        margin-left: 200px;
-        position: sticky;
+        width: 90%;
+        /* height: 380px; */
+        margin: auto;
+        /* margin-right: 200px;
+        margin-left: 600p; */
+        /* position: sticky; */
         top: 200px;
         bottom: 100px;
         background-color: white;
         /* border: 2px solid red; */
+        padding-bottom: 50px;
 }
 #top button{
     
@@ -128,10 +149,9 @@ h3{
     /* background-color: red; */
     /* border: 2px solid red; */
     /* margin-left: 10%; */
-    width: 300px;
-    padding-top: 10px;
-    font-weight: bold;
-    margin-left: 300px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
 }
 
     </style>
@@ -139,9 +159,33 @@ h3{
 </head>
 
 <body>
-    <div id="pr-nav">
-
-    </div>
+   
+     <!-- nav bar start ********************************* -->
+     <div id="nav" >
+        <div>
+            <img src="logo.jpeg" alt="">
+            </div>
+            <div id="search">
+            <form action="" class="search_bar">
+                <input type="text" placeholder="search for product">
+                <button type="submit"><img src="https://cdn-icons-png.flaticon.com/512/122/122932.png" alt=""></button>
+            </form>
+            </div>
+            <div id="login">
+            <div>
+            
+                <a href="signup.html" id="rlogin" >Login/SignUp</a>
+            
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIqso8C1IWNREoH1G489UcD8PvgT1jRzqeAjFDlJ0xpVzEuUP1c1mj4Og0EwjS4GgmBM&usqp=CAU"
+                    alt="">
+                <h3>My Basket</h3>
+                <h3 id="cart_count">0</h3>
+            </div>
+            </div>
+     </div>
+     <!-- nav bar end ********************************* -->
   
         <h1 id="om">Cart Items</h1>
  <!-- <div id="top">
@@ -151,6 +195,8 @@ h3{
     <button><a href="address.html">payment</a></button>
 </div> -->
  <div id="top">
+    <div id="data"></div>
+
      <div id="mini">
         <div id="help">Need help? 922330022</div>
         <h3>Price Details</h3>
@@ -172,21 +218,60 @@ h3{
                
                 <div ></div>
             </div>
+        </div>
+        <button><a href="address.html">Place order</a></button>
+        </div>
+        </div>
+
+   
+    
+    
+    <div id="footer">
+        <div id="foot-1" class="foot-btm">
+
+            <p>bigBasket</p>
+            <p>About Us</p>
+            <p>In News</p>
+            <p>Green bigbasket</p>
+            <p>Privacy Policy</p>
+            <p>Affiliate</p>
+            <p>Terms and Conditions</p>
+            <p>Careers At bigbasket</p>
+            <p>bb Instant</p>
+            
+        </div>
+        <div id="foot-2" class="foot-btm">
+            <p>Help</p>
+            <p>FAQs</p>
+            <p>Contact Us</p>
+            <p>bb Wallet FAQs</p>
+            <p>bb Wallet T&Cs</p>
+            <p>Vendor Connect</p>
+        </div>
+        <div id="foot-3" class="foot-btm">
+            <p>Download Our App</p>
+            <img src="https://www.bbassets.com/static/v2639/custPage/build/content/img/Google-App-store-icon.png" alt="">
+            <img src="https://www.bbassets.com/static/v2639/custPage/build/content/img/Apple-App-store-icon.png" alt="">
+        </div>
+        <div id="foot-3" class="foot-btm">
+            <p>Get Social With Us</p>
+            <div class="round-social">
+                <div>
+                    <img src="https://img.icons8.com/ios/1x/facebook-new.png" alt="">
+                </div>
+                <div>
+                    <img src="https://img.icons8.com/ios/1x/pinterest--v5.gif" alt="">
+                </div>
+                <div>
+                    <img src="https://img.icons8.com/ios/1x/twitter--v2.gif" alt="">
+                </div>
+                <div>
+                    <img src="https://img.icons8.com/ios/1x/instagram-new--v2.gif" alt="">
+                </div>
+            </div>
            
         </div>
-
-    </div>
-    <button><a href="address.html">Place order</a></button>
-    </div>
-    <div id="data"></div>
-
-    <div id="footer">
-
-    </div>
-    <div class="footer">
-        <div id="foot">
-
-        </div>
+        
     </div>
 </body>
 

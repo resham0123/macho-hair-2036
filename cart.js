@@ -1,8 +1,4 @@
-import nav from "./nav.js"
 
-
-let navDiv = document.getElementById("pr-nav");
-navDiv.innerHTML = nav;
 
 
 
