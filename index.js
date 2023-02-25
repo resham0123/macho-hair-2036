@@ -8,6 +8,27 @@ let navDiv = document.getElementById("nav");
 let footerDiv = document.getElementById("footer")
 navDiv.innerHTML = nav;
 footerDiv.innerHTML = footer;
+let searchForm = (localStorage.getItem("search-form"))||null;
+let search = document.querySelector("#form-search")
+let form = document.querySelector("#search-form");
+
+form.addEventListener("submit",(e)=>{
+   e.preventDefault()
+
+   formSubmit(e)
+});
+
+function formSubmit(e){
+   let x = search.value;
+   console.log(x);
+   localStorage.setItem("search-form",x);
+   
+   window.location.href = "products.html";
+
+
+}
+
+
 
 
 
@@ -24,10 +45,7 @@ function first(){
  setInterval(second,4000);
  setInterval(third,6000);
  
- document.querySelector("#rsign").addEventListener("click",()=>{
-   console.log("hii");
-  document.querySelector("#rsignupage").classList.add("active");
- })
+ 
 
 
  function Mfirst(){

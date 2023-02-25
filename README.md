@@ -10,4 +10,7 @@
 #foodgrain
 #fresh
 
+#search-form  localStorage.setItem("search-form");
+#cart-array   localStorage.setItem("macho-cart");
 
+#register     localStorage.setItem("");
