@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:weight@300;400;500;600&display=swap');
 :root{
-    --main-colour:#DD2F6E;
+    --main-colour:#35dd2f;
     --color-dark:#1D2231;
     --text-grey:#8390A2;
 }
@@ -37,15 +37,30 @@
 
 }
 
+.sidebar-brand span{
+    display: inline-block;
+    padding-right: 1rem;
+}
+
 .sidebar-menu li{
 width: 100%;
-margin-bottom: 1.3rem;
+margin-bottom: 1.7rem;
+padding-left: 2rem;
 }
 
 .sidebar-menu a{
+   padding-left: 1rem;
     display: block;
     color: #fff;
     font-size: 1.1rem;
+}
+ 
+.sidebar-menu a.active{
+    background: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color:var(--main-colour);
+    border-radius:30px 0px 0px 30px;
 }
 
 .sidebar-menu a span:first-child{
@@ -63,6 +78,47 @@ margin-left: 345px;
 
 }
 
-.sidebar-menu li a span{
- width: 10px;
+header{
+    display:flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.search-wrapper{
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 50px;
+    display:flex;
+    align-items: center;
+    overflow-x: hidden;
+
+}
+
+.search-wrapper span{
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+}
+.search-wrapper input{
+     height: 100%;
+     padding: .5rem;
+     border: none;
+     outline: none;
+
+}
+
+.user-wrapper{
+    display: flex;
+    align-items: center;
+
+}
+
+.user-wrapper img{
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-wrapper small{
+    display: inline-block;
+    
 }
