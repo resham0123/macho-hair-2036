@@ -52,3 +52,15 @@ console.log(`<<<<<<,GEToTP<<<`,getotp, mobileNo.length)
         
     }
 })
+
+document.querySelector("#btn").addEventListener("click",()=>{
+    document.querySelector("#mobile").value="";
+    document.querySelector("#mobile").placeholder="enter email here";
+   // let email=document.querySelector("#mobile");
+   // localStorage.setItem("email",email);
+   document.querySelector("#continue").addEventListener("click",()=>{
+    alert(ranOtp);
+    document.querySelector("#mobile").value="";
+   })
+    
+});
