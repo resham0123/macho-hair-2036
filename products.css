@@ -23,6 +23,8 @@
     margin-left:15px;
 
     border:1px solid red;
+    padding:10px;
+    border-radius:2px;
 
 }
 #filter span{
@@ -115,6 +117,13 @@
     cursor:pointer;
 }
 
+ #sort-slice{
+    border:1px solid red;
+ }
+ #sort-slice>form
+
+/* filtering */
+
 /* total Div */
 
 #count-product{
@@ -163,6 +172,19 @@
     opacity:.8;
 }
 
+#category{
+    display:flex;
+    flex-flow:column;
+    gap:10px;
+}
+#category p{
+    
+    transition:.9s
+}
+#category p:hover{
+    cursor:pointer;
+    color:green;
+}
 
 /* footer */
 
@@ -199,6 +221,8 @@
 .round-social img{
     width:80%;
 }
+
+
 
 
 
