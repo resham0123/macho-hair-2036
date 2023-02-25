@@ -23,6 +23,7 @@ let nav =
     <h3 id="cart_count">0</h3>
 </div>
 </div>
+
 `
 
 export default nav

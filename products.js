@@ -1,9 +1,14 @@
 
-import nav from "./nav.js"
 
+import nav from "./navbar.js";
+import footer from "./footer.js"
 
-let navDiv = document.getElementById("pr-nav");
+let navDiv = document.getElementById("nav");
+let footerDiv = document.getElementById("footer");
 navDiv.innerHTML = nav;
+footerDiv.innerHTML = footer;
+
+let cartArr = JSON.parse(localStorage.getItem("macho-cart"))||[];
 
 
 
@@ -23,109 +28,115 @@ let url = `https://macho-hair-backend.vercel.app/all`
 
 fetchData(url)
 
-let filterBrand = document.querySelectorAll("#brand input")
-let filterBrandArray = [];
+// let filterBrand = document.querySelectorAll("#brand input")
+// let filterBrandArray = [];
 let filterCategory = document.querySelectorAll("#category input")
 let filterCategoryArray = [];
 
-for(let brand of filterBrand){
 
-    brand.addEventListener("change",(e)=>{
-       filterBrandFun(e);
-    })
-}
 
-for(let cat of filterCategory){
-   cat.addEventListener("change",(e)=>{
-      filterCategoryFun(e);
-      // console.log(cat);
-   })
-}
+// for(let brand of filterBrand){
 
-function filterBrandFun(e){
+//     brand.addEventListener("change",(e)=>{
+//        filterBrandFun(e);
+//     })
+// }
 
-    if(e.target.checked){
-      filterBrandArray.push(e.target.id)
-    }
+// for(let cat of filterCategory){
+//    cat.addEventListener("change",(e)=>{
+//       filterCategoryFun(e);
+//       // console.log(cat);
+//    })
+// }
 
-    else{
-       filterBrandArray = filterBrandArray.filter(el=>el!=e.target.id)
-    }
+// function filterBrandFun(e){
 
-    showFilter(filterBrandArray,filterCategoryArray)
+//     if(e.target.checked){
+//       filterBrandArray.push(e.target.id)
+//     }
 
-}
+//     else{
+//        filterBrandArray = filterBrandArray.filter(el=>el!=e.target.id)
+//     }
 
-function filterCategoryFun(e){
+//     showFilter(filterBrandArray,filterCategoryArray)
 
-    if(e.target.checked){
-      filterCategoryArray.push(e.target.id)
-    }
+// }
 
-    else{
-       filterCategoryArray = filterCategoryArray.filter(el=>el!=e.target.id)
-    }
+// function filterCategoryFun(e){
 
-    showFilter(filterBrandArray,filterCategoryArray)
-};
+//     if(e.target.checked){
+//       filterCategoryArray.push(e.target.id)
+//     }
 
-function showFilter(bArr=[],cArr=[]){
+//     else{
+//        filterCategoryArray = filterCategoryArray.filter(el=>el!=e.target.id)
+//     }
 
-     if(bArr.length==0&&cArr.length==0){
-       renderData(allData)
-     }
+//     showFilter(filterBrandArray,filterCategoryArray)
+// };
 
-     else{
-      let a1 = [];
-      let a2 = [];
-      if(bArr.length){
+// function showFilter(bArr=[],cArr=[]){
 
-         for(let i=0;i<bArr.length;i++){
+//      if(bArr.length==0&&cArr.length==0){
+//        renderData(allData)
+//      }
 
-            let filter = allData.filter(item=>{
-               return item.title==bArr[i];
-            })
+//      else{
+//       let a1 = [];
+//       let a2 = [];
+//       if(bArr.length){
 
-            for(let i=0;i<filter.length;i++){
-                a1.push(filter[i])
-            }
-         }
-      }
-      if(cArr.length){
+//          for(let i=0;i<bArr.length;i++){
 
-         for(let i=0;i<cArr.length;i++){
+//             let filter = allData.filter(item=>{
+//                return item.title==bArr[i];
+//             })
 
-            let filter = allData.filter(item=>{
-               return item.category==cArr[i];
-            })
+//             for(let i=0;i<filter.length;i++){
+//                 a1.push(filter[i])
+//             }
+//          }
+//       }
+//       if(cArr.length){
 
-            for(let i=0;i<filter.length;i++){
-                a2.push(filter[i])
-            }
-         }
-      }
+//          for(let i=0;i<cArr.length;i++){
 
-      // else{
-      //    a2 = a1;
-      // }
+//             let filter = allData.filter(item=>{
+//                return item.category==cArr[i];
+//             })
+
+//             for(let i=0;i<filter.length;i++){
+//                 a2.push(filter[i])
+//             }
+//          }
+//       }
+
+//       // else{
+//       //    a2 = a1;
+//       // }
     
-      let data = [...a1,...a2];
+//       let data = [...a1,...a2];
 
-      const uniqueData = data.filter((obj, i, arr) =>
-          i=== arr.findIndex((o) => o.id === obj.id)
-      );
-
-
+//       let uniqueData = data.filter((obj, i, arr) =>
+//           i=== arr.findIndex((o) => o.id === obj.id)
+//       );
 
 
-      // console.log({a1},{a2});
-      // console.log({x})
-      // let y = [`title=${a1.join("&")}&category=${a2.join("&")}`]
-   //  console.log(y);
-      // let url = "https://macho-hair-backend.vercel.app/all&"
-         renderData(uniqueData)
-     }  //else ends here
-}
+
+       
+//       // console.log({a1},{a2});
+//       // console.log({x})
+//       // let y = [`title=${a1.join("&")}&category=${a2.join("&")}`]
+//    //  console.log(y);
+//       // let url = "https://macho-hair-backend.vercel.app/all&"
+//          renderData(uniqueData)
+//      }  //else ends here
+// }
+
+
+
+
 
 
 
@@ -283,15 +294,50 @@ function renderData(product){
    for(let btn of add_btns){
 
       btn.addEventListener("click",(e)=>{
-         let x = e.target.getAttribute("data-title")
-        //  console.log(x);
-         alert(`${x} has been added to cart 🚀`)
+         let id = e.target.getAttribute("data-id")
+         let title = e.target.getAttribute("data-title")
+         let img = e.target.getAttribute("data-img")
+         let price = e.target.getAttribute("data-price")
+         let category = e.target.getAttribute("data-category");
+         let delivery = e.target.getAttribute("data-category");
+
+         let obj = {
+            id:id,
+            title:title,
+            img:img,
+            price:price,
+            category:category,
+            delivery:delivery
+         }
+
+         if(checkLocal(id)){
+            alert("Product already in cart")
+         }
+         else{
+
+            cartArr.push(obj);
+            localStorage.setItem("macho-cart",JSON.stringify(cartArr))
+            
+           //  console.log(x);
+            alert(`${JSON.stringify(obj)} has been added to cart 🚀`)
+         }
+        
       })
    }
 
 }
 
-function getCard({img,category,title,quantity,price,delivery}){
+function checkLocal(id){
+
+     for(let i=0;i<cartArr.length;i++){
+        if(cartArr[i].id==id){
+           return true
+        }
+     }
+     return false
+}
+
+function getCard({id,img,category,title,quantity,price,delivery}){
 // console.log("🚀 ~ file: products.js:52 ~ getCard ~ img,category,title,quantity,price,delivery:", img,category,title,quantity,price,delivery)
   
    
@@ -300,11 +346,10 @@ function getCard({img,category,title,quantity,price,delivery}){
     <img src="${img}" alt="${title}">
     <p>Title: ${title}</p>
     <p>Category: ${category}</p>
-    <p>Quantity: ${quantity}</p>
     <p>Price: ${price}</p>
     <p>${delivery}</p>
-    <span>Quantity: <input id="quan-inp"></input></span>
-    <button class="product-add-btn" data-title=${title}>Add To Cart</button>
+   
+    <button class="product-add-btn" data-id=${id} data-price=${price} data-title=${title} data-img=${img} data-category=${category} data-delivery=${delivery} data-quantity=1>Add To Cart</button>
       </div>`
 
 
@@ -312,3 +357,4 @@ function getCard({img,category,title,quantity,price,delivery}){
        
    
 }
+
