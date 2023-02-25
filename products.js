@@ -28,128 +28,20 @@ let url = `https://macho-hair-backend.vercel.app/all`
 
 fetchData(url)
 
-// let filterBrand = document.querySelectorAll("#brand input")
-// let filterBrandArray = [];
-let filterCategory = document.querySelectorAll("#category input")
-let filterCategoryArray = [];
 
+let filterCategory = document.querySelectorAll("#category p")
+for(let item of filterCategory){
 
+   item.addEventListener("click",(e)=>{
+      //  filterFun(e)
+       let x = e.target.id;
+       console.log(x);
+      let url = `https://macho-hair-backend.vercel.app/${x}`;
 
-// for(let brand of filterBrand){
+      fetchData(url)
+   })
 
-//     brand.addEventListener("change",(e)=>{
-//        filterBrandFun(e);
-//     })
-// }
-
-// for(let cat of filterCategory){
-//    cat.addEventListener("change",(e)=>{
-//       filterCategoryFun(e);
-//       // console.log(cat);
-//    })
-// }
-
-// function filterBrandFun(e){
-
-//     if(e.target.checked){
-//       filterBrandArray.push(e.target.id)
-//     }
-
-//     else{
-//        filterBrandArray = filterBrandArray.filter(el=>el!=e.target.id)
-//     }
-
-//     showFilter(filterBrandArray,filterCategoryArray)
-
-// }
-
-// function filterCategoryFun(e){
-
-//     if(e.target.checked){
-//       filterCategoryArray.push(e.target.id)
-//     }
-
-//     else{
-//        filterCategoryArray = filterCategoryArray.filter(el=>el!=e.target.id)
-//     }
-
-//     showFilter(filterBrandArray,filterCategoryArray)
-// };
-
-// function showFilter(bArr=[],cArr=[]){
-
-//      if(bArr.length==0&&cArr.length==0){
-//        renderData(allData)
-//      }
-
-//      else{
-//       let a1 = [];
-//       let a2 = [];
-//       if(bArr.length){
-
-//          for(let i=0;i<bArr.length;i++){
-
-//             let filter = allData.filter(item=>{
-//                return item.title==bArr[i];
-//             })
-
-//             for(let i=0;i<filter.length;i++){
-//                 a1.push(filter[i])
-//             }
-//          }
-//       }
-//       if(cArr.length){
-
-//          for(let i=0;i<cArr.length;i++){
-
-//             let filter = allData.filter(item=>{
-//                return item.category==cArr[i];
-//             })
-
-//             for(let i=0;i<filter.length;i++){
-//                 a2.push(filter[i])
-//             }
-//          }
-//       }
-
-//       // else{
-//       //    a2 = a1;
-//       // }
-    
-//       let data = [...a1,...a2];
-
-//       let uniqueData = data.filter((obj, i, arr) =>
-//           i=== arr.findIndex((o) => o.id === obj.id)
-//       );
-
-
-
-       
-//       // console.log({a1},{a2});
-//       // console.log({x})
-//       // let y = [`title=${a1.join("&")}&category=${a2.join("&")}`]
-//    //  console.log(y);
-//       // let url = "https://macho-hair-backend.vercel.app/all&"
-//          renderData(uniqueData)
-//      }  //else ends here
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -190,7 +82,9 @@ function sortData(){
      }
 
    }
-async function fetchData(page=1){
+
+
+async function fetchData(url=`https://macho-hair-backend.vercel.app/all`,page=1){
  let isLoader = true;
   
    try {
@@ -203,17 +97,17 @@ async function fetchData(page=1){
          container.append(loaderImg)
      }
 
-    let res = await fetch(`https://macho-hair-backend.vercel.app/all?_limit=${limit}&_page=${page}`);
+    let res = await fetch(`${url}?_page=${page}&_limit=${limit}`);
 
 
-   //  console.log({page},{limit});
+   
     totalItems = res.headers.get("x-total-count");
    totalProductDiv.innerText = `There are total ${totalItems} items to explore`
 
     console.log(totalItems);
 
    //  console.log(res.headers.get("X-Total-Count"));
-    console.log(res);
+   //  console.log(res);
     
     let data = await res.json();
     
@@ -221,14 +115,14 @@ async function fetchData(page=1){
     allData = data;
     let totalPages = Math.ceil(totalItems/limit);
 
-    
+    console.log(totalPages);
    setTimeout(() => {
       container.innerHTML = null;
       container.style.display = "grid"
       isLoader = false;
       if(!isLoader){
+         renderPages(url,totalPages)
          renderData(data)
-         renderPages(totalPages)
      }
    },800);
 
@@ -239,46 +133,12 @@ async function fetchData(page=1){
 }
 
 
-function renderPages(pages){
-
-   let arr = [];
-
-   for(let i=1;i<=pages;i++){
-      arr.push(`<button data-page-number=${i}>${i}</button>`)
-   }
-
-   // console.log(arr);
-   pagesDiv.innerHTML = arr.join("");
-   // console.log(pagesDiv);
-
-   let all_btn = document.querySelectorAll("#pagination-wrapper button");
-
-   for(let btn of all_btn){
-       btn.addEventListener("click",(e)=>{
-
-         console.log(e.target.dataset.pageNumber);
-           fetchData(e.target.dataset.pageNumber)
-           window.scrollTo({ top: 0,behaviour:"smooth" });
-       })
-   }
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 function renderData(product){
    
-   console.log(product,"this line");
+   // console.log(product,"this line");
     container.innerHTML = null;
 
 
@@ -319,7 +179,7 @@ function renderData(product){
             localStorage.setItem("macho-cart",JSON.stringify(cartArr))
             
            //  console.log(x);
-            alert(`${JSON.stringify(obj)} has been added to cart 🚀`)
+            alert(`${JSON.stringify(obj)} has been added to cart`)
          }
         
       })
@@ -356,5 +216,32 @@ function getCard({id,img,category,title,quantity,price,delivery}){
       return card
        
    
+}
+
+
+
+function renderPages(url,pages){
+  
+   let arr = [];
+
+   for(let i=1;i<=pages;i++){
+      arr.push(`<button data-page-number=${i}>${i}</button>`)
+   }
+
+   // console.log(arr);
+   pagesDiv.innerHTML = arr.join("");
+   console.log(pagesDiv);
+   // console.log(pagesDiv);
+
+   let all_btn = document.querySelectorAll("#pagination-wrapper button");
+
+   for(let btn of all_btn){
+       btn.addEventListener("click",(e)=>{
+
+         console.log(e.target.dataset.pageNumber);
+           fetchData(url,e.target.dataset.pageNumber)
+           window.scrollTo({ top: 0,behaviour:"smooth" });
+       })
+   }
 }
 
