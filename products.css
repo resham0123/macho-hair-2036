@@ -120,7 +120,13 @@
  #sort-slice{
     border:1px solid red;
  }
- #sort-slice>form
+ #sort-slice>form{
+    width:50%;
+    margin:auto;
+    display: flex;
+    flex-flow:column;
+    gap:5px;
+ }
 
 /* filtering */
 
