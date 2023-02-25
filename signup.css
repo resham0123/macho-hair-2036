@@ -1,4 +1,164 @@
-#rsignupage{
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family:Poppins
+    }
+    #rsignupage{
+    width:100%;
+    height:auto;
+    border: 0px solid red;
+    margin: auto;
+    display: flex;
+    background-color: lightblue;
+}
+#r1signupage{
+    width:28%;
+    margin-left: 25%;
+    margin-top: 5%;
+    height: 500px;
+    border: 0px solid red;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    text-align: centre;
+}
+#rlogin{
+    text-align: center;
+    padding-top: 20px;
+    color: green;
+    font-size: 20px;
+}
+#btn{
+    margin-left: 25%;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 10px;
+    background-color: green;
+    color: white;
+    margin-top: 25%;
+}
+#continue{
+    margin-left: 25%;
+    padding: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 90px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+}
+
+#r2signupage{
+    width:25%;
+    margin-top: 8%;
+    background-color: white;
+    height:400px;
+    border: 0px solid yellow;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+#r2signupage img{
+    width: 100%;
+}
+#mobile{
+    margin-left: 25%;
+    margin-bottom: 10px;
+    margin-top: 15%;
+    width: 60%;
+    text-align: center;
+    height: 30px;
+}
+#div2{
+    width: 30%;
+    margin: auto;
+    margin-top: 25%;
+    margin-bottom: 10%;
+}   
+    #p1{
+        text-align: center;
+        font-size: 15px;
+    }
+#p2{
+    text-align: center;
+    font-size: 15px;
+}
+
+#one{
+    
+    display: flex;
+}
+#one>div:nth-child(2){
+    font-size: 10px;
+}
+#one>div:nth-child(3){
+    font-size: 10px;
+}
+#two{
+    display: flex;
+}
+#two>div:nth-child(2){
+    font-size: 10px;
+    margin-bottom: 30px;
+}
+#store{
+    display: flex;
+    margin-top: 20px;
+}
+#store>div:nth-child(1)>img{
+    width: 50%;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+#store>div:nth-child(2)>img{
+    width: 40%;
+}
+p{
+    font-size: 15px;
+    text-align: center;
+}
+#shopping{
+    margin-top: 18%;
+}
+#p{
+margin-top: 10px;
+
+}
+#h1{
+    margin-top: 10px;
+    text-align: center;
+    color: green;
+    font-size: 15px;
+}
+#rbtn{
+    background-color: green;
+}
+#resend{
+    color: green;
+    text-align: center;
+}
+#logo1{
+    width: 50%;
+}
+#logo2{
+    width: 50%;
+}
+#p2{
+    color:blueviolet
+}
+
+
+
+
+
+
+
+
+
+
+/* #rsignupage{
     width:100%;
     height:auto;
     border: 0px solid red;
@@ -60,4 +220,4 @@
 }
 #two{
     display: flex;
-}
+} */
