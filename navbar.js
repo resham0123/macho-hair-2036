@@ -6,9 +6,9 @@ let nav =
 </div>
 <div id="search">
 
-<form action="" class="search_bar">
-    <input  type="text" id="search-2" placeholder="search for product" >
-    <button>Search</button>
+// <form action="" class="search_bar">
+//     <input  type="text" id="search-2" placeholder="search for product" >
+//     <button>Search</button>
     
 
 <form action="" id="search-form">
@@ -42,7 +42,6 @@ let nav =
 
 
 <div id="basket" onclick="window.location.href='cart1.html'">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIqso8C1IWNREoH1G489UcD8PvgT1jRzqeAjFDlJ0xpVzEuUP1c1mj4Og0EwjS4GgmBM&usqp=CAU"
 
 <div>
     <img id = "cart_image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIqso8C1IWNREoH1G489UcD8PvgT1jRzqeAjFDlJ0xpVzEuUP1c1mj4Og0EwjS4GgmBM&usqp=CAU"

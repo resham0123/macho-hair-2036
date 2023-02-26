@@ -1,14 +1,14 @@
 import footer from "./footer.js";
-import nav from "./navbar.js";
+// import nav from "./navbar.js";
 
 
 
 
 
 
-let navDiv = document.getElementById("nav");
+// let navDiv = document.getElementById("nav");
 let footerDiv = document.getElementById("footer");
-navDiv.innerHTML = nav;
+// navDiv.innerHTML = nav;
 footerDiv.innerHTML = footer;
 let searchForm = (localStorage.getItem("search-form"))||null;
 let search = document.querySelector("#form-search")
@@ -62,11 +62,7 @@ setInterval(Msecond,4000);
 setInterval(Mthird,6000);
 
 
-let cart = document.getElementById("cart_image");
-cart.addEventListener("click",()=>{
-   window.location.href = "cart1.html"
-   // console.log("hi")
-})
+
 
 
 
@@ -96,4 +92,9 @@ async function apicall(){
 }
 apicall()
 
+let cart = document.getElementById("cart_image");
+cart.addEventListener("click",()=>{
+   window.location.href = "cart1.html"
+   // console.log("hi")
+})
 

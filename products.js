@@ -1,11 +1,11 @@
 
 
-import nav from "./navbar.js";
+// import nav from "./navbar.js";
 import footer from "./footer.js"
 
-let navDiv = document.getElementById("nav");
+// let navDiv = document.getElementById("nav");
 let footerDiv = document.getElementById("footer");
-navDiv.innerHTML = nav;
+// navDiv.innerHTML = nav;
 footerDiv.innerHTML = footer;
 
 let cartArr = JSON.parse(localStorage.getItem("macho-cart"))||[];
@@ -281,5 +281,5 @@ cart.addEventListener("click",()=>{
 })
 
 //cartArr;
-let count = document.getElementById("cart_count");
-count.textContent = cartArr.length
+// let count = document.getElementById("cart_count");
+// count.textContent = cartArr.length
