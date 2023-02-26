@@ -420,3 +420,58 @@ width: 100%;
    /* border:1px solid red; */
 }
 
+
+
+@media only screen and (max-width:700px){
+  #bank{
+    grid-template-columns: repeat(2,2fr); 
+  }
+  #brand_store{
+    grid-template-columns: repeat(3,1fr);
+  }
+  #vegi{
+    grid-template-columns: repeat(3,1fr);  
+  }
+  #Daily_Staples{
+    grid-template-columns: repeat(3,1fr); 
+  }
+  #Beverages{
+    grid-template-columns: repeat(3,1fr); 
+  }
+  #Snacks_Store{
+    grid-template-columns: repeat(2,1fr);  
+  }
+  #Hygiene{
+    grid-template-columns: repeat(2,1fr);
+  }
+  #footer{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media only screen and (max-width:400px){
+    #bank{
+      grid-template-columns: repeat(1,2fr); 
+    }
+    #brand_store{
+      grid-template-columns: repeat(2,1fr);
+    }
+    #vegi{
+      grid-template-columns: repeat(2,1fr);  
+    }
+    #Daily_Staples{
+      grid-template-columns: repeat(2,1fr); 
+    }
+    #Beverages{
+      grid-template-columns: repeat(2,1fr); 
+    }
+    #Snacks_Store{
+      grid-template-columns: repeat(1,1fr);  
+    }
+    #Hygiene{
+      grid-template-columns: repeat(1,1fr);
+    }
+    #footer{
+      grid-template-columns: repeat(1,1fr);
+    }
+  }

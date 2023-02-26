@@ -1,14 +1,17 @@
 
 
-import nav from "./navbar.js";
-import footer from "./footer.js"
+// import nav from "./navbar.js";
+// import footer from "./footer.js"
 
-let navDiv = document.getElementById("nav");
-let footerDiv = document.getElementById("footer");
-navDiv.innerHTML = nav;
-footerDiv.innerHTML = footer;
+// let navDiv = document.getElementById("nav");
+// let footerDiv = document.getElementById("footer");
+// navDiv.innerHTML = nav;
+// footerDiv.innerHTML = footer;
 
 let cartArr = JSON.parse(localStorage.getItem("macho-cart"))||[];
+let queryArr = localStorage.getItem("search-form")||null
+let url = `https://macho-hair-backend.vercel.app/all`;
+
 
 
 
@@ -25,13 +28,41 @@ let totalProductDiv = document.getElementById("count-product");
 let loaderImg = document.createElement("img");
 loaderImg.setAttribute("class","loaderImg");
 
-let url = `https://macho-hair-backend.vercel.app/all`
-
 fetchData()
+if(queryArr){
+
+ url = `https://macho-hair-backend.vercel.app/all?q=${queryArr}&`;
+
+ fetchData(url)
+
+}
+else{
+
+   fetchData()
+}
+
 
 let filterBrand = document.getElementById("brand-form");
 let filterCategory = document.querySelectorAll("#category p")
 let sortSliceForm = document.querySelector("#sort-slice-form");
+let form = document.querySelector("#search-form");
+
+form.addEventListener("submit",(e)=>{
+   e.preventDefault()
+
+   formSubmit(e)
+});
+
+function formSubmit(e){
+   e.preventDefault();
+   let x = document.getElementById("form-search").value;
+   // console.log(x);.
+   url = `https://macho-hair-backend.vercel.app/all?q=${x}&`
+   fetchData(url)
+   
+
+
+}
 sortFilter.addEventListener("click",sortData);
 filterBrand.addEventListener("submit",brandForm)
 function brandForm(e){
@@ -90,7 +121,7 @@ sortSliceForm.addEventListener("submit",(e)=>{
 
 
 async function fetchData(url=`https://macho-hair-backend.vercel.app/all?`,page=1){
- let isLoader = true;
+   let isLoader = true;
   
    try {
 
@@ -117,6 +148,7 @@ async function fetchData(url=`https://macho-hair-backend.vercel.app/all?`,page=1
    //  console.log(res);
     
     let data = await res.json();
+    localStorage.removeItem("search-form")
     
     
     allData = data;
@@ -186,7 +218,7 @@ function renderData(product){
             localStorage.setItem("macho-cart",JSON.stringify(cartArr))
             
            //  console.log(x);
-            alert(`${JSON.stringify(obj)} has been added to cart`)
+            alert(`${title} has been added to cart`)
          }
         
       })
@@ -252,3 +284,20 @@ function renderPages(url,pages){
    }
 }
 
+
+
+let topScroll = document.getElementById("topScroll");
+topScroll.addEventListener("click",(event)=>{
+    event.preventDefault();
+    window.scroll(0,0);
+})
+
+let cart = document.getElementById("cart_image");
+cart.addEventListener("click",()=>{
+   window.location.href = "cart1.html"
+   // console.log("hi")
+})
+
+//cartArr;
+let count = document.getElementById("cart_count");
+count.textContent = cartArr.length

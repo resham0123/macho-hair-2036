@@ -4,8 +4,10 @@ import nav from "./navbar.js";
 
 
 
+
+
 let navDiv = document.getElementById("nav");
-let footerDiv = document.getElementById("footer")
+let footerDiv = document.getElementById("footer");
 navDiv.innerHTML = nav;
 footerDiv.innerHTML = footer;
 let searchForm = (localStorage.getItem("search-form"))||null;
@@ -19,6 +21,7 @@ form.addEventListener("submit",(e)=>{
 });
 
 function formSubmit(e){
+   e.preventDefault();
    let x = search.value;
    console.log(x);
    localStorage.setItem("search-form",x);
@@ -27,9 +30,6 @@ function formSubmit(e){
 
 
 }
-
-
-
 
 
 function first(){
@@ -45,7 +45,7 @@ function first(){
  setInterval(second,4000);
  setInterval(third,6000);
  
- 
+
 
 
  function Mfirst(){
@@ -62,6 +62,38 @@ setInterval(Msecond,4000);
 setInterval(Mthird,6000);
 
 
+let cart = document.getElementById("cart_image");
+cart.addEventListener("click",()=>{
+   window.location.href = "cart1.html"
+   // console.log("hi")
+})
 
+
+
+
+
+let searchinput = document.getElementById("search-2")
+
+
+
+async function apicall(){
+    let  search =searchinput.value;
+
+    if(search !==""){
+        let api = (`https://macho-hair-backend.vercel.app/all`);
+        try {
+            let req = await fetch(api);
+            let data = req.json();
+    
+            console.log(data)
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+       
+
+}
+apicall()
 
 
