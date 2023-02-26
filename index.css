@@ -28,12 +28,16 @@
 
     
 }
+#search-form{
+    display:flex;
+}
 #search{
     width: 45%;
     height: 30%;
   
     display: flex;
     margin-top: 50px;
+    /* border:1px solid red; */
      
     
 }
