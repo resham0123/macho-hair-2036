@@ -5,7 +5,7 @@ import nav from "./navbar.js";
 
 
 let navDiv = document.getElementById("nav");
-let footerDiv = document.getElementById("footer")
+let footerDiv = document.getElementById("footer");
 navDiv.innerHTML = nav;
 footerDiv.innerHTML = footer;
 let searchForm = (localStorage.getItem("search-form"))||null;
