@@ -301,3 +301,11 @@ cart.addEventListener("click",()=>{
 //cartArr;
 let count = document.getElementById("cart_count");
 count.textContent = cartArr.length
+
+
+
+let logimg = document.getElementById("logimg");
+logimg.addEventListener("click",()=>{
+   window.location.href = "./index.html"
+   // console.log("hi")
+})
