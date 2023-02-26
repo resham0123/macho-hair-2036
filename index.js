@@ -19,6 +19,7 @@ form.addEventListener("submit",(e)=>{
 });
 
 function formSubmit(e){
+   e.preventDefault();
    let x = search.value;
    console.log(x);
    localStorage.setItem("search-form",x);
@@ -27,9 +28,6 @@ function formSubmit(e){
 
 
 }
-
-
-
 
 
 function first(){
