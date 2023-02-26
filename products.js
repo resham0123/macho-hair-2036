@@ -14,9 +14,10 @@ let cartArr = JSON.parse(localStorage.getItem("macho-cart"))||[];
 
 let container = document.getElementById("product-container")
 let sortFilter = document.getElementById("sort-price");
-let limit = 20;
 let pagesDiv = document.getElementById("pagination-wrapper")
 let allData = [];
+let limit = 20;
+
 
 let totalItems
 let totalProductDiv = document.getElementById("count-product");
@@ -26,65 +27,69 @@ loaderImg.setAttribute("class","loaderImg");
 
 let url = `https://macho-hair-backend.vercel.app/all`
 
-fetchData(url)
+fetchData()
 
-
+let filterBrand = document.getElementById("brand-form");
 let filterCategory = document.querySelectorAll("#category p")
+let sortSliceForm = document.querySelector("#sort-slice-form");
+sortFilter.addEventListener("click",sortData);
+filterBrand.addEventListener("submit",brandForm)
+function brandForm(e){
+   e.preventDefault();
+   let string = document.getElementById("brand-search").value;
+   let brand = string.charAt(0).toUpperCase()+string.slice(1);
+   console.log(brand);
+   url = `https://macho-hair-backend.vercel.app/all?title=${brand}&`;
+   fetchData(url);
+   // string.value="";
+}
 for(let item of filterCategory){
 
    item.addEventListener("click",(e)=>{
       //  filterFun(e)
        let x = e.target.id;
        console.log(x);
-      let url = `https://macho-hair-backend.vercel.app/${x}`;
+      url = `https://macho-hair-backend.vercel.app/${x}?`;
 
       fetchData(url)
    })
 
 }
 
-
-
-
-
-
-
-sortFilter.addEventListener("click",sortData);
-
 function sortData(){
-
-     isLoader = true
-
-   //   if(isLoader){
-   //    //   console.log(loaderImg);
-   //      loaderImg.src = "loader.gif"
-   //      container.innerHTML = null;
-   //       container.append(loaderImg)
-   //   }
-
-     if(sortFilter.value==""){
-      //   isLoader = false
-        renderData(allData)
-     }
-
      if(sortFilter.value=="asc"){
-         console.log("allData  ",allData);
-        let ascen = allData.sort((a,b)=>a.price-b.price);
-      //   console.log("asecn ",ascen);
-      //   isLoader = false;
-        renderData(ascen)
+      //    console.log("allData  ",allData);
+      //   let ascen = allData.sort((a,b)=>a.price-b.price);
+
+      url = `https://macho-hair-backend.vercel.app/all?_sort=price&_order=asc`
+      
+       fetchData(url)
      }
 
      if(sortFilter.value=="desc"){
 
-        let descen = allData.sort((a,b)=>b.price-a.price);
-        renderData(descen)
+      url = `https://macho-hair-backend.vercel.app/all?_sort=price&_order=desc`
+      
+      fetchData(url)
      }
 
    }
 
+sortSliceForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+   let min = document.getElementById("slice-min").value
+   let max = document.getElementById("slice-max").value
 
-async function fetchData(url=`https://macho-hair-backend.vercel.app/all`,page=1){
+   console.log(min,max);
+
+   url = `https://macho-hair-backend.vercel.app/all?price_gte=${min}&price_lte=${max}&`
+
+   fetchData(url)
+
+})
+
+
+async function fetchData(url=`https://macho-hair-backend.vercel.app/all?`,page=1){
  let isLoader = true;
   
    try {
@@ -97,7 +102,9 @@ async function fetchData(url=`https://macho-hair-backend.vercel.app/all`,page=1)
          container.append(loaderImg)
      }
 
-    let res = await fetch(`${url}?_page=${page}&_limit=${limit}`);
+    
+
+    let res = await fetch(`${url}_page=${page}&_limit=${limit}`);
 
 
    
@@ -206,8 +213,8 @@ function getCard({id,img,category,title,quantity,price,delivery}){
     <img src="${img}" alt="${title}">
     <p>Title: ${title}</p>
     <p>Category: ${category}</p>
-    <p>Price: ${price}</p>
-    <p>${delivery}</p>
+    <p>&#x20B9 ${price}</p>
+    <p>&#9951 ${delivery} &#9203</p>
    
     <button class="product-add-btn" data-id=${id} data-price=${price} data-title=${title} data-img=${img} data-category=${category} data-delivery=${delivery} data-quantity=1>Add To Cart</button>
       </div>`
