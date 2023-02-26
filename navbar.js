@@ -2,7 +2,7 @@ let nav =
 
 `
 <div>
-<img src="G.png" alt="">
+<img src="logo.jpeg" alt="">
 </div>
 <div id="search">
 <form action="" id="search-form">
