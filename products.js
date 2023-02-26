@@ -273,3 +273,13 @@ topScroll.addEventListener("click",(event)=>{
     event.preventDefault();
     window.scroll(0,0);
 })
+
+let cart = document.getElementById("cart_image");
+cart.addEventListener("click",()=>{
+   window.location.href = "cart1.html"
+   // console.log("hi")
+})
+
+//cartArr;
+let count = document.getElementById("cart_count");
+count.textContent = cartArr.length
