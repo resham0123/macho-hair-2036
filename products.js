@@ -1,12 +1,12 @@
 
 
-import nav from "./navbar.js";
-import footer from "./footer.js"
+// import nav from "./navbar.js";
+// import footer from "./footer.js"
 
-let navDiv = document.getElementById("nav");
-let footerDiv = document.getElementById("footer");
-navDiv.innerHTML = nav;
-footerDiv.innerHTML = footer;
+// let navDiv = document.getElementById("nav");
+// let footerDiv = document.getElementById("footer");
+// navDiv.innerHTML = nav;
+// footerDiv.innerHTML = footer;
 
 let cartArr = JSON.parse(localStorage.getItem("macho-cart"))||[];
 let queryArr = localStorage.getItem("search-form")||null
