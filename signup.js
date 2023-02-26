@@ -1,5 +1,5 @@
 document.querySelector("#admin").addEventListener("click",()=>{
-    location.href="admin.html";
+    window.location.href="./admin/admin.html";
 })
 let mob=localStorage.getItem("mobileNo");
 let getotp=localStorage.getItem("otp");
