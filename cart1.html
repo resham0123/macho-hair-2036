@@ -18,7 +18,9 @@
 
 /* footer */
 
-
+        .search_bar{
+            border: 2px solid red;
+        }
 
 
        
@@ -91,7 +93,7 @@
     
     width: 420px;
     height: 40px;
-    background-color: rgb(212, 20, 180);
+    background-color: red;
 }
  h1{
             text-align: center;
@@ -153,6 +155,20 @@ h3{
     margin: auto;
     text-align: center;
 }
+#shop{
+    background-color: pink;
+    height: 50px;
+    border: 0;
+    border-radius: 10px;
+    color: black;
+}
+#shop:hover{
+    background-color: red;
+    color: white;
+}
+#add{
+    border: 0;
+}
 
     </style>
    
@@ -163,27 +179,39 @@ h3{
      <!-- nav bar start ********************************* -->
      <div id="nav" >
         <div>
-            <img src="logo.jpeg" alt="">
+            <img src="G.png" alt="">
             </div>
             <div id="search">
-            <form action="" class="search_bar">
-                <input type="text" placeholder="search for product">
-                <button type="submit"><img src="https://cdn-icons-png.flaticon.com/512/122/122932.png" alt=""></button>
+            <form action="" id="search-form">
+                <input type="text" placeholder="search for product" id=form-search>
+                <button type="submit">Search</button>
             </form>
             </div>
+            
+            <div id="home">
+            <a href="">HOME</a>
+            <a href="">ABOUT</a>
+            <a href="">SERVICES</a>
+            <a href="">CONTACT</a>
+            </div>
+            
+            
             <div id="login">
             <div>
             
                 <a href="signup.html" id="rlogin" >Login/SignUp</a>
             
             </div>
+            
             <div>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIqso8C1IWNREoH1G489UcD8PvgT1jRzqeAjFDlJ0xpVzEuUP1c1mj4Og0EwjS4GgmBM&usqp=CAU"
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIqso8C1IWNREoH1G489UcD8PvgT1jRzqeAjFDlJ0xpVzEuUP1c1mj4Og0EwjS4GgmBM&usqp=CAU"
                     alt="">
                 <h3>My Basket</h3>
-                <h3 id="cart_count">0</h3>
+                <h3 id="cart_count">0</h3> -->
+                <button id="shop">CONTINUE SHOPPING</button>
             </div>
             </div>
+            
      </div>
      <!-- nav bar end ********************************* -->
   
@@ -219,7 +247,7 @@ h3{
                 <div ></div>
             </div>
         </div>
-        <button><a href="address.html">Place order</a></button>
+        <button id="add">Place order</a></button>
         </div>
         </div>
 
