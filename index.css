@@ -422,7 +422,7 @@ width: 100%;
 
 
 
-@media only screen and (max-width:700px){
+@media only screen and (max-width:900px){
   #bank{
     grid-template-columns: repeat(2,2fr); 
   }
@@ -447,9 +447,32 @@ width: 100%;
   #footer{
     grid-template-columns: repeat(2,1fr);
   }
+  .slide-image{
+    display: none;
+}
+.Middleslide{
+    display: none;
+}
+  #dietimg{
+    display: none;
+  }
+  #btn{
+    grid-template-columns: repeat(3,1fr); 
+  }
+  #search input{
+    width: 50%;
+    font-size: 10px;
+  }
+  #search button{
+    font-size: 10px;
+    padding:2px 6px;
+  }
+  #home{
+    display: none;
+  }
 }
 
-@media only screen and (max-width:400px){
+@media only screen and (max-width:500px){
     #bank{
       grid-template-columns: repeat(1,2fr); 
     }
@@ -474,4 +497,25 @@ width: 100%;
     #footer{
       grid-template-columns: repeat(1,1fr);
     }
+    #btn{
+        grid-template-columns: repeat(1,1fr); 
+        
+      }
+      #btn>button{
+        padding: 5px 10px 5px 10px;
+        font-size: medium;
+      }
+      #offer{
+        height: 80px;
+      }
+      #login div img{
+        display: none;
+      }
+      #login div h3{
+        font-size: medium;
+      }
+      #login h3{
+        margin-left: 2px;
+      }
+     
   }
