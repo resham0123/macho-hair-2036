@@ -10,7 +10,7 @@ footerDiv.innerHTML = footer;
 
 let cartArr = JSON.parse(localStorage.getItem("macho-cart"))||[];
 let queryArr = localStorage.getItem("search-form")||null
-let url = `https://macho-hair-backend.vercel.app/all`
+let url = `https://macho-hair-backend.vercel.app/all`;
 
 
 
@@ -200,7 +200,7 @@ function renderData(product){
             localStorage.setItem("macho-cart",JSON.stringify(cartArr))
             
            //  console.log(x);
-            alert(`${JSON.stringify(obj)} has been added to cart`)
+            alert(`${title} has been added to cart`)
          }
         
       })
