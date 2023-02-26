@@ -36,6 +36,11 @@ function display(card_data){
         image.src = product.img;
     
         // p_name.append(p_price);
+
+        // increment decrement buttons start*********************
+        
+        // increment decrement buttons end*********************
+        
         
         div.append(image, p_name, p_price);
     

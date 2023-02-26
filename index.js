@@ -62,6 +62,13 @@ setInterval(Msecond,4000);
 setInterval(Mthird,6000);
 
 
+let cart = document.getElementById("cart_image");
+cart.addEventListener("click",()=>{
+   window.location.href = "cart1.html"
+   // console.log("hi")
+})
+
+
 
 
 
