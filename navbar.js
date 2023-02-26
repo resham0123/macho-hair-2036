@@ -12,7 +12,7 @@ let nav =
 </div>
 
 <div id="home">
-<a href="">HOME</a>
+<a href="index.html">HOME</a>
 <a href="">ABOUT</a>
 <a href="">SERVICES</a>
 <a href="">CONTACT</a>

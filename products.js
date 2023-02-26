@@ -9,6 +9,9 @@ navDiv.innerHTML = nav;
 footerDiv.innerHTML = footer;
 
 let cartArr = JSON.parse(localStorage.getItem("macho-cart"))||[];
+let queryArr = localStorage.getItem("search-form")||null
+let url = `https://macho-hair-backend.vercel.app/all`
+
 
 
 
@@ -25,9 +28,19 @@ let totalProductDiv = document.getElementById("count-product");
 let loaderImg = document.createElement("img");
 loaderImg.setAttribute("class","loaderImg");
 
-let url = `https://macho-hair-backend.vercel.app/all`
-
 fetchData()
+if(queryArr){
+
+ url = `https://macho-hair-backend.vercel.app/all?q=${queryArr}&`;
+
+ fetchData(url)
+
+}
+else{
+
+   fetchData()
+}
+
 
 let filterBrand = document.getElementById("brand-form");
 let filterCategory = document.querySelectorAll("#category p")
@@ -90,7 +103,7 @@ sortSliceForm.addEventListener("submit",(e)=>{
 
 
 async function fetchData(url=`https://macho-hair-backend.vercel.app/all?`,page=1){
- let isLoader = true;
+   let isLoader = true;
   
    try {
 
@@ -117,6 +130,7 @@ async function fetchData(url=`https://macho-hair-backend.vercel.app/all?`,page=1
    //  console.log(res);
     
     let data = await res.json();
+    localStorage.removeItem("search-form")
     
     
     allData = data;
