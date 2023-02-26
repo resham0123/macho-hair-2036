@@ -4,6 +4,8 @@ import nav from "./navbar.js";
 
 
 
+
+
 let navDiv = document.getElementById("nav");
 let footerDiv = document.getElementById("footer");
 navDiv.innerHTML = nav;
@@ -43,7 +45,7 @@ function first(){
  setInterval(second,4000);
  setInterval(third,6000);
  
- 
+
 
 
  function Mfirst(){
@@ -70,5 +72,28 @@ cart.addEventListener("click",()=>{
 
 
 
+let searchinput = document.getElementById("search-2")
+
+
+
+async function apicall(){
+    let  search =searchinput.value;
+
+    if(search !==""){
+        let api = (`https://macho-hair-backend.vercel.app/all`);
+        try {
+            let req = await fetch(api);
+            let data = req.json();
+    
+            console.log(data)
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+       
+
+}
+apicall()
 
 
