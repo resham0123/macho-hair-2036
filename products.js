@@ -45,6 +45,24 @@ else{
 let filterBrand = document.getElementById("brand-form");
 let filterCategory = document.querySelectorAll("#category p")
 let sortSliceForm = document.querySelector("#sort-slice-form");
+let form = document.querySelector("#search-form");
+
+form.addEventListener("submit",(e)=>{
+   e.preventDefault()
+
+   formSubmit(e)
+});
+
+function formSubmit(e){
+   e.preventDefault();
+   let x = document.getElementById("form-search").value;
+   // console.log(x);.
+   url = `https://macho-hair-backend.vercel.app/all?q=${x}&`
+   fetchData(url)
+   
+
+
+}
 sortFilter.addEventListener("click",sortData);
 filterBrand.addEventListener("submit",brandForm)
 function brandForm(e){

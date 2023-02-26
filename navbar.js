@@ -37,3 +37,9 @@ let nav =
 `
 
 export default nav
+
+
+{/* <form action="" id="search-form">
+                <input type="text" placeholder="search for product" id=form-search>
+                <button type="submit">Search</button>
+            </form> */}
