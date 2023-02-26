@@ -62,17 +62,19 @@
     
 }
 
-
-
+/* 
+{
     width: 45%;
     height: 30%;
   
     display: flex;
     margin-top: 50px;
-    /* border:1px solid red; */
+   
      
     
-}
+} 
+
+*/
 #search button{
     font-size: 19px;
     padding:3px 10px;
@@ -118,6 +120,14 @@
     
     
 }
+
+/* basket */
+
+#basket{
+    display:flex;
+}
+
+/* basket */
 a:hover{
    color: white !important;
 }
