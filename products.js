@@ -252,3 +252,10 @@ function renderPages(url,pages){
    }
 }
 
+
+
+let topScroll = document.getElementById("topScroll");
+topScroll.addEventListener("click",(event)=>{
+    event.preventDefault();
+    window.scroll(0,0);
+})
