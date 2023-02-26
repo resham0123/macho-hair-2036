@@ -19,6 +19,7 @@ form.addEventListener("submit",(e)=>{
 });
 
 function formSubmit(e){
+   e.preventDefault();
    let x = search.value;
    console.log(x);
    localStorage.setItem("search-form",x);
@@ -27,9 +28,6 @@ function formSubmit(e){
 
 
 }
-
-
-
 
 
 function first(){
@@ -60,6 +58,13 @@ function Mthird(){
 setInterval(Mfirst,2000);
 setInterval(Msecond,4000);
 setInterval(Mthird,6000);
+
+
+let cart = document.getElementById("cart_image");
+cart.addEventListener("click",()=>{
+   window.location.href = "cart1.html"
+   // console.log("hi")
+})
 
 
 

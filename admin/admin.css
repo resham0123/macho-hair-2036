@@ -1,3 +1,6 @@
+ 
+#adminPage {
+    display: flex;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:weight@300;400;500;600&display=swap');
 :root{
     --main-colour:#35dd2f;
@@ -21,21 +24,100 @@
     position: fixed;
     left: 0;
     top: 0;
+
     height: 100%;
-    background: var(--main-colour);
-}
+  }
+  #sidebar {
+    width: 20%;
+    background-color: #f1f1f1;
+    padding: 2em;
+  }
 
-.sidebar-brand {
-    height: 90px;
-    padding: 1rem 0rem 1rem 2rem;
-    color:#fff;
-}
+  #sidebar span {
+    align-items: center;
+    display: inline-block;
+    margin-left: 50rem;
+   }
 
-.sidebar-brand h2{
-   display: inline-block;
-   padding-right: 1rem;
 
-}
+ .search1{
+    height: 100%;
+  padding: .5rem;
+  
+ }
+  
+  #sidebar h2 {
+    margin-bottom: 1em;
+  }
+  #sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #sidebar li {
+    margin-bottom: 0.5em;
+  }
+  #sidebar a {
+    color: #333;
+    text-decoration: none;
+  }
+  #sidebar a:hover{
+
+    font-weight: bold ;
+  }
+  #main {
+    color:black;
+    width: 80%;
+    padding: 2em;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  thead{
+    color:white;
+    background-color: green;
+  }
+  th{
+    /* color: #9FA8DA; */
+    background-color: green;
+  }
+  td:hover{
+    font-weight: bold;
+    background-color: #E1F5FE;
+  }
+  th, td {
+    color: 9FA8DA;
+    border: 1px solid #ddd;
+    padding: 0.5em;
+  }
+  #addBtn {
+    background-color: green;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+  }
+  .content {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  /* adding form ------------------------------------------start*/
+  form{
+      text-align: left;  
+  }
+  p{
+      font-weight: bold;
+      text-align: center;
+      color: #D80331;
+  }
+  #form{
+      margin: auto;
+      width: 80%;
+      font-family: sans-serif;
+      /* border: 1px solid red; */
+  }
 
 .sidebar-brand span{
     display: inline-block;
@@ -76,7 +158,21 @@ margin-left: 345px;
 .sidebar h2 img{
     width: 50px;
 
-}
+
+  .form1{
+      width: 100%;
+      border: 1px solid;
+      border-radius: 5px;
+      margin: 5px 0px;
+      height: 20px;
+      border: 2px solid black;
+  }
+
+
+  label{
+      color:blue;
+  }
+  /* adding form end-----------------------------------------end */
 
 header{
     display:flex;
@@ -122,3 +218,4 @@ header{
     display: inline-block;
     
 }
+
