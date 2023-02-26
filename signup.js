@@ -1,4 +1,6 @@
-
+document.querySelector("#admin").addEventListener("click",()=>{
+    location.href="admin.html";
+})
 let mob=localStorage.getItem("mobileNo");
 let getotp=localStorage.getItem("otp");
 document.querySelector("#logo1").addEventListener("click",()=>{
@@ -18,7 +20,19 @@ console.log(`<<<<<<,GEToTP<<<`,getotp, mobileNo.length)
         document.querySelector("#btn").innerText=" OTP Sent Successfully";
      
         document.querySelector("#continue").innerText="Verify With OTP";
-        document.querySe
+        
+//x.innerText="hii";
+
+let y=document.createElement("h6");
+let timeup=10;
+let timer=setInterval(function(){
+timeup--;
+y.innerText= "00:"+ timeup;
+if(timeup<=0){
+    clearInterval(timer);
+   // location.href="signup.html";
+}
+},1000);
         document.querySelector("#continue").style.width="50%";
       //  document.querySelector("#continue").style.font-size:"5px";
         document.querySelector("#p").innerText="Please check the otp sent to your mobile number";
