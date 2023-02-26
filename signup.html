@@ -5,146 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="styleshhet" href="signup.css" />
+    <link rel="stylesheet" href="signup.css">
 </head>
-<style>
-    *{
-        margin: 0px;
-        padding: 0px;
-    }
-    #rsignupage{
-    width:100%;
-    height:auto;
-    border: 0px solid red;
-    margin: auto;
-    display: flex;
-    background-color: lightblue;
-}
-#r1signupage{
-    width:28%;
-    margin-left: 25%;
-    margin-top: 5%;
-    height: 500px;
-    border: 1px solid red;
-    background-color: white;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    text-align: centre;
-}
-#rlogin{
-    text-align: center;
-    padding-top: 20px;
-    color: green;
-    font-size: 20px;
-}
-#btn{
-    margin-left: 25%;
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-bottom: 10px;
-    background-color: green;
-    color: white;
-    margin-top: 25%;
-}
-#continue{
-    margin-left: 25%;
-    padding: 10px;
-    padding-left: 80px;
-    padding-right: 80px;
-    margin-bottom: 90px;
-    cursor: pointer;
-    background-color: green;
-    color: white;
-    font-size: 16px;
-}
 
-#r2signupage{
-    width:25%;
-    margin-top: 8%;
-    background-color: white;
-    height:400px;
-    border: 1px solid yellow;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-#r2signupage img{
-    width: 100%;
-}
-#mobile{
-    margin-left: 25%;
-    margin-bottom: 10px;
-    margin-top: 15%;
-    width: 60%;
-    text-align: center;
-    height: 30px;
-}
-#div2{
-    width: 30%;
-    margin: auto;
-    margin-top: 25%;
-    margin-bottom: 10%;
-}   
-    #p1{
-        text-align: center;
-        font-size: 15px;
-    }
-#p2{
-    text-align: center;
-    font-size: 15px;
-}
-
-#one{
-    display: flex;
-}
-#one>div:nth-child(2){
-    font-size: 10px;
-}
-#one>div:nth-child(3){
-    font-size: 10px;
-}
-#two{
-    display: flex;
-}
-#two>div:nth-child(2){
-    font-size: 10px;
-    margin-bottom: 30px;
-}
-#store{
-    display: flex;
-    margin-top: 50px;
-}
-#store>div:nth-child(1)>img{
-    width: 70%;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-#store>div:nth-child(2)>img{
-    width: 40%;
-}
-p{
-    font-size: 15px;
-    text-align: center;
-}
-#shopping{
-    margin-top: 10%;
-}
-#p{
-margin-top: 10px;
-
-}
-#h1{
-    margin-top: 10px;
-    text-align: center;
-    color: green;
-    font-size: 15px;
-}
-#rbtn{
-    background-color: green;
-}
-#resend{
-    color: green;
-    text-align: center;
-}
-</style>
 <body>
     <div id="rsignupage">
     <div id="r1signupage">
@@ -152,10 +15,11 @@ margin-top: 10px;
         
         <p id="p"></p>
         <h1 id="h1"></h1>
-        <input id="mobile" placeholder="Enter Mobile Number (10-digit)"/>
+        <input id="mobile"  placeholder="Enter Mobile Number (10-digit)"/>
         <h3 id="resend"></h3>
         <button id="btn">Login using Email Address</button></br>
         <button id="continue">Continue</button></br>
+
         <span><p id="p1">By continuing I accept TCP bigbasket's terms and condition</p></span></br>
         <span><p id="p2">Privacy Policy</p></span>
     </div>
@@ -163,8 +27,8 @@ margin-top: 10px;
         <div id="div2">
             <div id="one">
                 <div><img id="logo1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAclBMVEXy8vIzMzP8/PwcHBwuLi7a2tpfX18aGho/Pz/19fUoKCgtLS34+PgmJiaNjY0iIiLp6enExMRvb2/Q0NCYmJhpaWm+vr7i4uK1tbWkpKStra1GRkYAAADt7e06OjqgoKBTU1OAgIBLS0sSEhJZWVnU1NR158noAAADAUlEQVR4nO3c3XKiMBiAYQJo/UIExH8tWtt6/7e4CYs/0G57tDrD9z4H29WZzsALxhCpUQQAAAAAAAAAAAAAAAAAAAAAAAAAAAA9xMX3nDx7gx5PZtX4XjVTF0FWhc1Sr/nH/7DFSlkEWe9T05Xu17oiyOjF9L2MaKCvwWvid9t+FNcEyauyBpHE58TYPN5cIiTnWFkCH2HeNFhllwZzdQnaBk7yxL8z6m4Q1Yv9ZHLQ2cBtp8Yenf+PnyhvrZlu3bM36eHc0Tdo99uFBkd9DeIqM9P2GkFmU5NV8ZO36PHEjwHTsn1QTo05qBsPZJb6K4TLoY/91UOq7sJRcj8ELC5DgFv4wSHX1qB880f++nYoc//orfzxNwbHbRKTLevr43qZmWSj653BfaamuJsRuG1h0k9VDWRnjUk7T/n5st0pGhEkjAbdSVGYMvkRQU8El/sz/62zdCZrn6XI1bwaZOWvE4vuiS/xxs+TjJZ1VSn9jMiOO3tb747bZl1VyatB/IQo3Z87O1uOk3Aa+GmTigYymqTmpTcXKJd/15PSiYpFxXAaZFXvyUsDLSdCONy9sU/Wn9ePXJ60VY/kNoXJxr2DLfPL0qopFMyY5WQ7s+RGuG5s2dPgXwwyevdn/ZdPFu3tY8f3wY+KMrN+RKx7Ty5uDYwd/FpKs1rSeym41f1n0LeVlaGKw5tg90jLfHLfIFsOfXE19nt5uB8OxG0mmekYfIPEzwUvOyniotEp7d2NkWhpIHEc16Pz7nSwnQAHPQ2aezDCXUjdAqrOg+/uQ6EBDWhAAxrQgAY0oAENaEADGtCABhENAhrQIKABDQIa0CCgAQ0CGtAgoAENAho0DcI9GOobZHnktDcwNi/XifIGxtrsnwkUNPjmxpMeO/QGrvotgq2Gfn+irH5toODveU7FjwmK07M38P+TevzTmWDH9fBPg0jKPLHtN4Tdvius/cKwJNfxR10SnfPx9/JzpCJB9OVrA3V/gSAAAAAAAAAAAAAAAAAAAAAAAAAAAIBOfwCBTia4g8A/FQAAAABJRU5ErkJggg=="/> </div>
-                <div>Quality</div>
-                <div>You can trust</div>
+                
+                <div>Quality You can trust</div>
                 </div>
             <div id="two">
                 <div><img id="logo2" src="https://media.istockphoto.com/id/1264183438/vector/reload-icon-outline-vector-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=HNtkGiGRqdRrDtmMU1ApP254FDhXI3vOx8TlWo8QawY="/> </div>

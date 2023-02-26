@@ -7,10 +7,29 @@ import nav from "./navbar.js";
 
 
 let navDiv = document.getElementById("nav");
-let footerDiv = document.getElementById("footer")
+let footerDiv = document.getElementById("footer");
 navDiv.innerHTML = nav;
 footerDiv.innerHTML = footer;
+let searchForm = (localStorage.getItem("search-form"))||null;
+let search = document.querySelector("#form-search")
+let form = document.querySelector("#search-form");
 
+form.addEventListener("submit",(e)=>{
+   e.preventDefault()
+
+   formSubmit(e)
+});
+
+function formSubmit(e){
+   e.preventDefault();
+   let x = search.value;
+   console.log(x);
+   localStorage.setItem("search-form",x);
+   
+   window.location.href = "products.html";
+
+
+}
 
 
 function first(){
@@ -26,10 +45,7 @@ function first(){
  setInterval(second,4000);
  setInterval(third,6000);
  
-//  document.querySelector("#rsign").addEventListener("click",()=>{
-//    console.log("hii");
-//   document.querySelector("#rsignupage").classList.add("active");
-//  })
+
 
 
  function Mfirst(){
@@ -44,6 +60,15 @@ function Mthird(){
 setInterval(Mfirst,2000);
 setInterval(Msecond,4000);
 setInterval(Mthird,6000);
+
+
+let cart = document.getElementById("cart_image");
+cart.addEventListener("click",()=>{
+   window.location.href = "cart1.html"
+   // console.log("hi")
+})
+
+
 
 
 

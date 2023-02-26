@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="index.css">
     <title>Products</title>
 </head>
 <body>
 
-    <div id="pr-nav">
+    <div id="nav">
 
     </div>
 
@@ -20,26 +20,43 @@
         <div id="filter">
             <div id="order">
                 <select name="" id="sort-price">
-                    <option value="">Sort by Price</option>
+                    <option value=""><h4>Sort by Price</h4></option>
                     <option value="asc">Low to High</option>
                     <option value="desc">High to Low</option>
                 </select>
             </div>
 
             <div id="brand">
-
-                <span>Amul<input type="checkbox" name="amul" id="Amul"></span>
-                <span>Dabur<input type="checkbox" name="Dabur" id="Dabur"></span>
-                <span>Complan<input type="checkbox" name="complan" id="Complan"></span>
-                <span>Bisleri<input type="checkbox" name="bisleri" id="Bisleri"></span>
+                <h4>Filter by Brand</h4>
+                <form action="" id="brand-form">
+                    <input type="text" name="" id="brand-search" placeholder="Enter brand name">
+                    <input type="submit" name="" id="">
+                </form>
             </div>
 
             <div id="category">
+                <!-- <span>Filter By Category</span>
                 <span>Dairy<input type="checkbox" name="dairy" id="dairy"></span>
                 <span>Beauty<input type="checkbox" name="beauty" id="beauty"></span>
                 <span>Beverages<input type="checkbox" name="beverages" id="beverages"></span>
                 <span>Foodgrain<input type="checkbox" name="foodgrains-oil-masala" id="foodgrains-oil-masala"></span>
-                <span>Fresh<input type="checkbox" name="Fresho" id="Fresho"></span>
+                <span>Fresh<input type="checkbox" name="Fresho" id="Fresho"></span> -->
+                <h4>Sort By Category</h4>
+                <p id="all">All</p>
+                <p id="dairy">Dairy</p>
+                <p id="fresh">Fresh</p>
+                <p id="beauty">Beauty</p>
+                <p id="beverages">Beverages</p>
+                <p id="foodgrain">Food-Grains Oil and Masala</p>
+            </div>
+
+            <div id="sort-slice">
+                <form action="" id="sort-slice-form">
+                <h4>Filter by Price</h4>
+                <input type="number" name="" id="slice-min" placeholder="&#x20B9 min" required>
+                <input type="number" name="" id="slice-max" placeholder="&#8377 max" required>
+                <input type="submit" name="" id="">
+                </form>
             </div>
         </div>
     
@@ -52,6 +69,14 @@
     </div>
 
     <div id="pagination-wrapper">
+        
+    </div>
+
+    <div id=topScroll>
+        <div id="showScroll">
+        <p>Scroll to top</p>
+        </div>
+       <img src="./scroll.png" alt="">
         
     </div>
 
