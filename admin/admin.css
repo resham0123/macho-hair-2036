@@ -1,68 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:weight@300;400;500;600&display=swap');
-:root{
-    --main-colour:#DD2F6E;
-    --color-dark:#1D2231;
-    --text-grey:#8390A2;
-}
-
-
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  list-style-type:none ;  
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-}
-
-.sidebar {
-    width: 345px;
-    position: fixed;
-    left: 0;
-    top: 0;
+#adminPage {
+    display: flex;
     height: 100%;
-    background: var(--main-colour);
-}
+  }
+  #sidebar {
+    width: 20%;
+    background-color: #f1f1f1;
+    padding: 2em;
+  }
 
-.sidebar-brand {
-    height: 90px;
-    padding: 1rem 0rem 1rem 2rem;
-    color:#fff;
-}
+  #sidebar span {
+    align-items: center;
+    display: inline-block;
+    margin-left: 50rem;
+   }
 
-.sidebar-brand h2{
-   display: inline-block;
-   padding-right: 1rem;
+ .search1{
+    height: 100%;
+  padding: .5rem;
+  
+ }
+  
+  #sidebar h2 {
+    margin-bottom: 1em;
+  }
+  #sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #sidebar li {
+    margin-bottom: 0.5em;
+  }
+  #sidebar a {
+    color: #333;
+    text-decoration: none;
+  }
+  #sidebar a:hover{
 
-}
-
-.sidebar-menu li{
-width: 100%;
-margin-bottom: 1.3rem;
-}
-
-.sidebar-menu a{
+    font-weight: bold ;
+  }
+  #main {
+    color:black;
+    width: 80%;
+    padding: 2em;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  thead{
+    color:white;
+    background-color: green;
+  }
+  th{
+    /* color: #9FA8DA; */
+    background-color: green;
+  }
+  td:hover{
+    font-weight: bold;
+    background-color: #E1F5FE;
+  }
+  th, td {
+    color: 9FA8DA;
+    border: 1px solid #ddd;
+    padding: 0.5em;
+  }
+  #addBtn {
+    background-color: green;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+  }
+  .content {
+    display: none;
+  }
+  .active {
     display: block;
-    color: #fff;
-    font-size: 1.1rem;
-}
+  }
+  /* adding form ------------------------------------------start*/
+  form{
+      text-align: left;  
+  }
+  p{
+      font-weight: bold;
+      text-align: center;
+      color: #D80331;
+  }
+  #form{
+      margin: auto;
+      width: 80%;
+      font-family: sans-serif;
+      /* border: 1px solid red; */
+  }
 
-.sidebar-menu a span:first-child{
-    font-size: 1.5rem;
-    padding-right: 1rem;
-}
+  .form1{
+      width: 100%;
+      border: 1px solid;
+      border-radius: 5px;
+      margin: 5px 0px;
+      height: 20px;
+      border: 2px solid black;
+  }
 
-.main-content {
-margin-left: 345px;
-
-}
-
-.sidebar h2 img{
-    width: 50px;
-
-}
-
-.sidebar-menu li a span{
- width: 10px;
-}
+  label{
+      color:blue;
+  }
+  /* adding form end-----------------------------------------end */
